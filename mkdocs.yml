@@ -34,8 +34,6 @@ nav:
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
-  - markdown_katex:
-      no_inline_svg : True
   - admonition
   - pymdownx.details
   - pymdownx.superfences
