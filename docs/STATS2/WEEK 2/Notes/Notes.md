@@ -69,12 +69,13 @@ $\implies n \times (\frac{15}{16})^{n-1} \times (\frac{1}{16})$
 ## Memoryless property
 Just mug up the formula for this one.💀🥲
 
-$$P(X > m+k | X>m ) = P(X>n)$$
+$$P(X > k+m | X>m ) = P(X>k)$$
 
 For a detailed proof see the lecture.
 
 ---
 
+# Extra Content
 ## Visualizing Random Variables 
 Sometimes we dont want the usual representation of random variables,
 that is when we use functions. Functions change the horizontal axis of the graph. $f(x) = x- 10$ is a function which shifts the x axis to the left by 10.
