@@ -512,9 +512,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#memoryless-property" class="md-nav__link">
-    Memoryless property
+  <a href="#memoryless-property-of-geometric-distribution" class="md-nav__link">
+    Memoryless Property of Geometric Distribution
   </a>
+  
+    <nav class="md-nav" aria-label="Memoryless Property of Geometric Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof" class="md-nav__link">
+    Proof
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -540,6 +553,102 @@
     <li class="md-nav__item">
       <a href="../Extra%20Content/" class="md-nav__link">
         Extra Useful Content
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          Maths2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Maths2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2_1" id="__nav_1_2_1_label" tabindex="0">
+          Week 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Week 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MATHS2/1.02%20-%20Matricies/" class="md-nav__link">
+        Vectors and Matrices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MATHS2/1.03%20-%20Determinants/" class="md-nav__link">
+        Determinants
       </a>
     </li>
   
@@ -660,9 +769,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#memoryless-property" class="md-nav__link">
-    Memoryless property
+  <a href="#memoryless-property-of-geometric-distribution" class="md-nav__link">
+    Memoryless Property of Geometric Distribution
   </a>
+  
+    <nav class="md-nav" aria-label="Memoryless Property of Geometric Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof" class="md-nav__link">
+    Proof
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -692,6 +814,10 @@
 <li>Memoryless Property </li>
 </ul>
 <h1 id="independence-of-random-variables">Independence of Random Variables</h1>
+<p>Independent random variables are variables that have no influence or relationship with each other. 
+In other words, the occurrence or value of one random variable does not affect the occurrence 
+or value of the other random variable.</p>
+<p>Formally, two random variables <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> are considered independent if the probability distribution of one variable is not affected by the other variable.</p>
 <p>Let <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> be two random variables defined in a probability space with ranges <span class="arithmatex">\(T_X\)</span> and <span class="arithmatex">\(T_Y\)</span> respectively.
 <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> are considered independent if :</p>
 <div class="arithmatex">\[f_{XY}(t_1 , t_2) = f_X(t_1) \times f_{Y|X=t_1}(t2)\]</div>
@@ -699,20 +825,18 @@
 <div class="arithmatex">\[f_{Y|X=t_1}(t2) = f_Y(t_2)\]</div>
 <div class="arithmatex">\[\therefore f_{XY}(t_1 , t_2) = f_X(t_1) \times f_Y(t_2)\]</div>
 <div class="admonition info">
-<p class="admonition-title">Info</p>
+<p class="admonition-title">Properties of Independent Variables</p>
 <ul>
 <li>Joint PMF is the product of the marginal PMFs when the variables are independent.</li>
 <li>All the subsets of independent random variables are independent.</li>
 </ul>
 </div>
 <h2 id="checking-independence-of-random-variables">Checking Independence of Random Variables</h2>
-<ul>
-<li>For every element in the table of 2 or more random variables.
-Each entry must be the product of their respective marginal PMFs then only they are considered <strong>independent.</strong> </li>
-<li>If for any element <span class="arithmatex">\(f_{XY}(t_1 , t_2) \neq f_X(t_1)f_Y(t_2)\)</span> then the variables are considered <strong>dependent.</strong></li>
-</ul>
+<p>For every element in the table of 2 or more random variables.
+Each entry must be the product of their respective marginal PMFs then only they are considered <strong>independent.</strong> </p>
+<p>If for any element <span class="arithmatex">\(f_{XY}(t_1 , t_2) \neq f_X(t_1)f_Y(t_2)\)</span> then the variables are considered <strong>dependent.</strong></p>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p class="admonition-title">Tips To Identify Independent Random Variables</p>
 <ul>
 <li>i.i.ds (independent and identically distributed) are one of the examples for independent random variables for any <span class="arithmatex">\(f_{XY}(t_1 , t_2) \neq 0\)</span></li>
 <li>Finding dependent variables is easier when <span class="arithmatex">\(f_{XY}(t_1)(t_2) =0\)</span>.
@@ -744,10 +868,31 @@ P(X_1 \neq 4 , X_2 \neq 4 , X_3 \neq 4 .... X_{n-1} \neq 4 , X_n =4) \end{align}
 <p><span class="arithmatex">\(\implies n \times P(X \neq 4)^{n-1} \times P(X=4)\)</span>
 <span class="arithmatex">\(\implies n \times (\frac{15}{16})^{n-1} \times (\frac{1}{16})\)</span></p>
 <hr />
-<h2 id="memoryless-property">Memoryless property</h2>
-<p>Just mug up the formula for this one.💀🥲</p>
-<div class="arithmatex">\[P(X &gt; k+m | X&gt;m ) = P(X&gt;k)\]</div>
-<p>For a detailed proof see the lecture.</p>
+<h2 id="memoryless-property-of-geometric-distribution">Memoryless Property of Geometric Distribution</h2>
+<p>The memoryless property of geometric random variables states that the past history or 
+previous outcomes of the trials do not affect the future outcomes. 
+In other words, the probability of success in the next trial remains the same, 
+regardless of how many trials have already occurred.</p>
+<p>(Just mug up the formula for this one if you dont understand this 💀🥲)</p>
+<div class="arithmatex">\[P(X \geq s+t | X \geq t  ) = P(X \geq s)\]</div>
+<!-- For a detailed proof see the lecture. -->
+<h3 id="proof">Proof</h3>
+<p>The PMF of a random variable <span class="arithmatex">\(X\)</span> is </p>
+<div class="arithmatex">\[\begin{align}
+f(x) &amp;= p(1-p)^x &amp; x &amp;= 0,1,2,..
+\end{align}\]</div>
+<p>The probability that <span class="arithmatex">\(X\)</span> is greater than or equal to <span class="arithmatex">\(x\)</span> is</p>
+<div class="arithmatex">\[\begin{align}
+P(X \geq x) &amp;= (1-p)^x &amp; x = 0,1,2,...
+\end{align}\]</div>
+<p>The conditional probability will be</p>
+<div class="arithmatex">\[\begin{align}
+P(X \geq s +t | X \geq t) &amp;= \frac{P(X \geq s + t , X \geq t)}{P(X \geq t)} \\
+&amp;= \frac{P(X \geq s+t)}{P(X \geq t)} \\
+&amp;=  \frac{(1-p)^{s+t}}{(1-p)^t} \\
+&amp;= (1-p)^s \\
+&amp;= P(X \geq s)
+\end{align}\]</div>
 <hr />
 
 
