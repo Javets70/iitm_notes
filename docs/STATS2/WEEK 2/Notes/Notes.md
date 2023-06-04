@@ -4,6 +4,12 @@
 
 
 # Independence of Random Variables 
+Independent random variables are variables that have no influence or relationship with each other. 
+In other words, the occurrence or value of one random variable does not affect the occurrence 
+or value of the other random variable.
+
+Formally, two random variables $X$ and $Y$ are considered independent if the probability distribution of one variable is not affected by the other variable.
+
 Let $X$ and $Y$ be two random variables defined in a probability space with ranges $T_X$ and $T_Y$ respectively.
 $X$ and $Y$ are considered independent if :
 
@@ -15,17 +21,18 @@ $$f_{Y|X=t_1}(t2) = f_Y(t_2)$$
 
 $$\therefore f_{XY}(t_1 , t_2) = f_X(t_1) \times f_Y(t_2)$$
 
-!!! info
+!!! info "Properties of Independent Variables"
     - Joint PMF is the product of the marginal PMFs when the variables are independent.
     - All the subsets of independent random variables are independent.
 
 
 ## Checking Independence of Random Variables 
-- For every element in the table of 2 or more random variables.
+For every element in the table of 2 or more random variables.
 Each entry must be the product of their respective marginal PMFs then only they are considered **independent.** 
-- If for any element $f_{XY}(t_1 , t_2) \neq f_X(t_1)f_Y(t_2)$ then the variables are considered **dependent.**
 
-!!! tip
+If for any element $f_{XY}(t_1 , t_2) \neq f_X(t_1)f_Y(t_2)$ then the variables are considered **dependent.**
+
+!!! tip "Tips To Identify Independent Random Variables"
     - i.i.ds (independent and identically distributed) are one of the examples for independent random variables for any $f_{XY}(t_1 , t_2) \neq 0$
     - Finding dependent variables is easier when $f_{XY}(t_1)(t_2) =0$.
     The logic behind it is for some $t_1$ and $t_2$ $f_X(t_1) \times f_Y(t_2) \neq 0$ , if it is 0 then it would mean that either or both of the marginals are 0 which is generally not true.
@@ -66,12 +73,40 @@ $\implies n \times (\frac{15}{16})^{n-1} \times (\frac{1}{16})$
 
 ---
 
-## Memoryless property
-Just mug up the formula for this one.💀🥲
+## Memoryless Property of Geometric Distribution
+The memoryless property of geometric random variables states that the past history or 
+previous outcomes of the trials do not affect the future outcomes. 
+In other words, the probability of success in the next trial remains the same, 
+regardless of how many trials have already occurred.
 
-$$P(X > k+m | X>m ) = P(X>k)$$
+(Just mug up the formula for this one if you dont understand this 💀🥲)
 
-For a detailed proof see the lecture.
+$$P(X \geq s+t | X \geq t  ) = P(X \geq s)$$
+
+<!-- For a detailed proof see the lecture. -->
+### Proof 
+The PMF of a random variable $X$ is 
+
+$$\begin{align}
+f(x) &= p(1-p)^x & x &= 0,1,2,..
+\end{align}$$
+
+The probability that $X$ is greater than or equal to $x$ is
+
+
+$$\begin{align}
+P(X \geq x) &= (1-p)^x & x = 0,1,2,...
+\end{align}$$
+
+The conditional probability will be
+
+$$\begin{align}
+P(X \geq s +t | X \geq t) &= \frac{P(X \geq s + t , X \geq t)}{P(X \geq t)} \\
+&= \frac{P(X \geq s+t)}{P(X \geq t)} \\
+&=  \frac{(1-p)^{s+t}}{(1-p)^t} \\
+&= (1-p)^s \\
+&= P(X \geq s)
+\end{align}$$
 
 ---
 
