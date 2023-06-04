@@ -30,6 +30,12 @@ nav:
         - Independent Random Variables : "STATS2/WEEK 2/Notes/Notes.md"
         - Extra Useful Content : "STATS2/WEEK 2/Notes/Extra Content.md"
 
+    - Maths2:
+      - Week 1:
+        - Vectors and Matrices : "MATHS2/1.02 - Matricies.md"
+        - Determinants : "MATHS2/1.03 - Determinants.md"
+        
+
 
 
 markdown_extensions:
