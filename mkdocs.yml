@@ -2,9 +2,26 @@ site_name: IITM Notes
 theme: 
   name: material
   features:
-    - search
+    - search.suggest
+    - search.highlight
     - navigation.tabs
+    - navigation.sections
     - toc.float
+
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+      primary: magenta
+      accent: pink
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to Light Mode
+      primary: magenta
+      accent: lime
+
   icon:
     admonition:
       note: octicons/tag-16
@@ -21,6 +38,7 @@ theme:
       quote: octicons/quote-16
 
 nav:
+  - Home : "index.md"
   - Foundational 2:
     - Stats2:
       - Week 1:
@@ -49,6 +67,9 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
 
 
     
