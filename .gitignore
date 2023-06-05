@@ -1,5 +1,2 @@
-/site
-/.obsidian
-*.rnote
-/*.rnote
-/**/*.rnote
+site/
+.obsidian/
