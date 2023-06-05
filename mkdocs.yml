@@ -5,7 +5,6 @@ theme:
     - search.suggest
     - search.highlight
     - navigation.tabs
-    - navigation.sections
     - toc.float
 
   palette:
@@ -19,7 +18,7 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to Light Mode
-      primary: black
+      primary: magenta
       accent: lime
 
   icon:
@@ -63,6 +62,7 @@ nav:
         - Consumer Behaviour : "BDM/WEEK 2/Consumer Behaviour.md"
         - Markets and Competiton : "BDM/WEEK 2/Markets and Competiton.md"
         - Elasticity and Demand : "BDM/WEEK 2/Elasticity and Demand.md"
+        - Production Cost : "BDM/WEEK 2/Production Cost.md"
         
 
 
@@ -73,6 +73,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - attr_list
 
 extra_javascript:
   - javascripts/mathjax.js
