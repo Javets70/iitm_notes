@@ -19,7 +19,7 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to Light Mode
-      primary: magenta
+      primary: black
       accent: lime
 
   icon:
