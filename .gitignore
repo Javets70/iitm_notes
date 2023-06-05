@@ -1,3 +1,4 @@
 **/*.rnote
+/*.rnote
 /site
 /.obsidian
