@@ -52,6 +52,17 @@ nav:
       - Week 1:
         - Vectors and Matrices : "MATHS2/1.02 - Matricies.md"
         - Determinants : "MATHS2/1.03 - Determinants.md"
+
+  - DS Diploma:
+    - Machine Learning Foundations:
+      - Week 3:
+        - Four Fundamental Subspaces: "MLF/WEEK 3/Four Fundamental Subspaces.md"
+    - Business Data Management:
+      - Week 1: "BDM/WEEK 1/Consumption.md"
+      - Week 2: 
+        - Consumer Behaviour : "BDM/WEEK 2/Consumer Behaviour.md"
+        - Markets and Competiton : "BDM/WEEK 2/Markets and Competiton.md"
+        - Elasticity and Demand : "BDM/WEEK 2/Elasticity and Demand.md"
         
 
 
