@@ -51,6 +51,13 @@ nav:
       - Week 1:
         - Vectors and Matrices : "MATHS2/1.02 - Matricies.md"
         - Determinants : "MATHS2/1.03 - Determinants.md"
+      - Week 2:
+        - Cramer's Rule : "MATHS2/2.01 - Cramer's Rule.md"
+        - Invertible Coefficient Matrix: "MATHS2/2.02 - Solutions to a system of linear equations with invertible coefficient.md"
+        - Echelon Form : "MATHS2/2.03 - The Echelon form.md"
+        - Row Reduction : "MATHS2/2.04 - Row Reduction.md"
+        - Gaussian Elimination : "MATHS2/2.05 - Gaussian elemination.md"
+
 
   - DS Diploma:
     - Machine Learning Foundations:
