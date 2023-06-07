@@ -45,12 +45,14 @@ available for consumption.
 - Suppose there are 2 goods $X$ and $Y$ with fixed prices $P_X$ and $P_Y$.
 Then consumer will reach an equilibrium when the ratio of marginal utlity to the prices
 is equal.
+
     $$ \frac{MU_X}{P_X} = \frac{MU_Y}{P_Y} $$
 
     Similarly , when the ratio is higher for a good than the other , then the consumer will
     prefer former.
 
     $$ \frac{MU_X}{P_X} > \frac{MU_Y}{P_Y} $$
+
     In this case consumer will prefer $X$ more than $Y$.
 
     !!! example 
