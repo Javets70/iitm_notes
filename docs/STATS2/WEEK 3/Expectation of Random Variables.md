@@ -5,6 +5,10 @@
 
 # Random Variables , Expectations and Variances
 ## Expectation of Random Variables
+The expectation of a random variable is like its average value or what you would typically expect it to be. It gives you an idea of the central tendency of the variable.
+
+!!! example "Coin Toss"
+    The expected value for a fair coin toss should be 0.5 . 
 
 Suppose $X$ is a random variables defined in the range of $T_X$ and PMF of $X$ is $f_X$ . The expected value of the random variables $X$ will be
 
@@ -23,6 +27,23 @@ $$
         - $E[X - Y] = E[X] + E[Y]$ 
         - **If X and Y are independent** :$E[XY] = E[X]E[Y]$
 
+
+## Variance and Standard Deviation Properties 
+The variance of a random variable measures how spread out or how much the values of the variable differ from the expected value (or mean). In simpler terms, it tells you how much the individual values of the random variable tend to deviate from the average.
+
+Let $X$ be a random variable. Let $a$ be a constant real number.
+
+$$\begin{align} Var(X) = E[X^2] - E[X]^2 \\ 
+SD(X) = \sqrt{Var(X)} \end{align}$$
+
+!!! note "Variance Properties"
+    - $Var(aX) = a^2Var(X)$
+    - $SD(aX) = |a|SD(X)$
+    - $Var(X + a) = Var(X)$
+    - $SD(X + a) = SD(X)$
+
+    !!! info
+        - **If X and Y are independent** : $Var(X+Y) = Var(X) + Var(Y)$
 
 ## Types of Random Variables 
 ### Uniform Random Variable 
@@ -88,49 +109,6 @@ $$
 Var(X) = p(1-p) = \sigma^2
 $$
 
-
-
-## Variance and Standard Deviation Properties 
-Let $X$ be a random variable. Let $a$ be a constant real number.
-
-$$
-Var(X) = E[X^2] - E[X]^2
-$$
-
-!!! note "Variance Properties"
-    - $Var(aX) = a^2Var(X)$
-    - $SD(aX) = |a|SD(X)$
-    - $Var(X + a) = Var(X)$
-    - $SD(X + a) = SD(X)$
-
-    !!! info
-        - **If X and Y are independent** : $Var(X+Y) = Var(X) + Var(Y)$
-
-
-
-## More Important Formulas 
-### Standardized Random Variables 
-A random variable $X$ is said to be standardized if $E[X] = 0 , Var(X) = 1$
-
-Also,
-If $X$ is a random variable.  Then,
-
-$$
-\frac{X - E[X]}{SD(X)}
-$$
-
-is a standardized random variable.
-
-### Covariance Formula
-$$
-Cov(X,Y) = E[XY] - E[X] \times E[Y]
-$$
-
-### Correlation Coefficient 
-$$
-Cor(X,Y) = \frac{Cov(X,Y)}{SD(X) \times SD(Y)}
-$$
-
 ## Bounds In Probabilities 
 ### Markov's Inequality 
 Let $X$ be a random variable.
@@ -163,4 +141,26 @@ $$
 P(|X - \mu| \geq k \sigma) \leq \frac{1}{k^2}
 $$
 
+## More Important Formulas 
+### Standardized Random Variables 
+A random variable $X$ is said to be standardized if $E[X] = 0 \text{ and } Var(X) = 1$
+
+Also,
+If $X$ is a random variable.  Then,
+
+$$
+\frac{X - E[X]}{SD(X)}
+$$
+
+is a standardized random variable.
+
+### Covariance Formula
+$$
+Cov(X,Y) = E[XY] - E[X] \times E[Y]
+$$
+
+### Correlation Coefficient 
+$$
+Cor(X,Y) = \frac{Cov(X,Y)}{SD(X) \times SD(Y)}
+$$
 
