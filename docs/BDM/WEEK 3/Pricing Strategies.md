@@ -166,4 +166,5 @@ costs and some of the fixed costs
     - The firm should also have information about the rivals pricing strategy.
 
     With all this information a firm arrives at an appropriate pricing strategy.
+
     
