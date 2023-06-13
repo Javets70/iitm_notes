@@ -22,6 +22,7 @@ theme:
       accent: lime
 
   icon:
+    repo: fontawesome/brands/github
     admonition:
       note: octicons/tag-16
       abstract: octicons/checklist-16
@@ -80,9 +81,17 @@ nav:
         - Pricing Strategies : "BDM/WEEK 3/Pricing Strategies.md"
         - Analysis of Firm Performance : "BDM/WEEK 3/Analysis of Firm Performance.md"
         
+# REPO CONFIG
+repo_url : "https://github.com/Javets70/iitm_notes"
+repo_name : "Javets70/iitm_notes"
 
-
-
+extra:
+  social:
+    - icon : material/github
+      link : https://github.com/kabironline/IIT-notes
+      name : Maths2 Notes Contributor
+      title : Hello
+# EXTENSIONS AND CSS
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
