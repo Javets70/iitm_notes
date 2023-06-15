@@ -61,6 +61,8 @@ nav:
         - Echelon Form : "MATHS2/2.03 - The Echelon form.md"
         - Row Reduction : "MATHS2/2.04 - Row Reduction.md"
         - Gaussian Elimination : "MATHS2/2.05 - Gaussian elemination.md"
+      - Week 3:
+        - Vector Spaces : "MATHS2/3.01 - Vector Spaces.md"
 
 
   - DS Diploma:
@@ -80,6 +82,8 @@ nav:
       - Week 3:
         - Pricing Strategies : "BDM/WEEK 3/Pricing Strategies.md"
         - Analysis of Firm Performance : "BDM/WEEK 3/Analysis of Firm Performance.md"
+      - Week 4:
+        - Industry Definition : "BDM/WEEK 4/Industry Definition.md"
         
 # REPO CONFIG
 repo_url : "https://github.com/Javets70/iitm_notes"

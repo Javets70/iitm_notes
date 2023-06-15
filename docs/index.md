@@ -8,12 +8,16 @@
 - **Student Notes**
     - [Studify Notes](https://studify.space/notes/ma1001)
     - [kabironline IIT Notes](https://github.com/kabironline/IIT-notes/tree/main/Math-1)
+- **Recommended Books**:
+    - [IITM Mathematics for Data Science](https://drive.google.com/file/d/1SSp2hlu5v46C_GKOlcHqLBxUAdTDJLf0/view)
 
 ### Statistics 1
 - [Week Wise Lecture Playlist](https://studify.space/course/ns_23q1_ma1002)
 - **Student Notes**
     - [Studify Notes](https://studify.space/notes/ma1002)
     - [kabironline IIT Notes](https://github.com/kabironline/IIT-notes/blob/main/Statistics-1/formulae.md)
+- **Recommended Books**:
+   - [IITM Descriptive Statistics](https://drive.google.com/file/d/1SUBG3ySCKj1rsuL65kACMoA0GfafKmUY/view)
 
 ### Computational Thinking (CT)
 - [Week Wise Lecture Playlist](https://studify.space/course/ns_23q1_cs1001)
@@ -24,7 +28,7 @@
 - [Student Notes](https://studify.space/notes/hs1001)
 
 ## Foundational 2
-## Maths 2
+### Maths 2
 - [Week Wise Lecture Playlist](https://studify.space/) (Login with student ID)
 - [Student Notes](https://javets70.github.io/iitm_notes/MATHS2/1.02%20-%20Matricies/)
 - **Recommended Books**
@@ -32,20 +36,20 @@
     - [Mathematics For Machine Learning (MML)](https://mml-book.github.io/book/mml-book.pdf)
     - [Vector Calculus](https://anton-petrunin.github.io/calc3book/calc3book.pdf)
 
-## Statistics 2 
+### Statistics 2 
 - [Week Wise Lecture Playlist](https://studify.space/) (Login with student ID)
 - [Student Notes](https://javets70.github.io/iitm_notes/STATS2/WEEK%201/Notes/Two%20Discrete%20Random%20Variables/)
 - **Recommended Books**
     - [Probability and Statistics Using R](https://www.isibang.ac.in/~athreya/psweur/)
     - [Probability and Statistics for Engineers](https://www.amazon.in/Probability-Statistics-Engineers-Scientists-Walpole/dp/0321629116)
 
-## Python 
+### Python 
 - [Week Wise Lecture Playlist](https://studify.space/) (Login with student ID)
 - [Student Unofficial Lectures](https://www.youtube.com/playlist?list=PLClULgPbRPsD-t0AYG8hR5iLIt2ZaNTkv) (All lectures are in hindi)
 - **Recommended Books**
     - [pypod github book](https://pypod.github.io/)
 
-## English 2 
+### English 2 
 - [Week Wise Lecture Playlist](https://studify.space/) (Login with student ID)
 
 ## Other Resources
