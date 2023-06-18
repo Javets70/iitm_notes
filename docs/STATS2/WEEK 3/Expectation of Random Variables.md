@@ -105,22 +105,7 @@ Markov's inequality states that the probability of a non-negative random variabl
 
 Let $X$ be a random variable.
 
-
 $$P(X \geq a) \leq \frac{E(X)}{a}$$
-
-??? question "Why is it $\frac{1}{k^2}?$"
-    A general explanation would be to look at the graphs of $\frac{1}{k}$ and $\frac{1}{k^2}$.
-
-    It can be seen that this graph does not look like a bell curve , also it goes in 3rd quadrant too.
-    If we were to plot probability along the y-axis , it would become negative according to this graph.
-    ![](img/image_2023-06-19-00-42-30.png){: style="width:70%;"}
-    <figcaption style="padding:auto"> Graph of $\frac{1}{k}$</figcaption>
-
-    This graph is much more similar to a bell curve and does not go in 3rd quadrant.
-    ![](img/image_2023-06-19-00-54-56.png){: style="width:70%;"}
-    <figcaption style="padding:auto"> Graph of $\frac{1}{k^2}$</figcaption>
-
- 
 
 !!! example
     A shopkeeper sells mobile phones. The expected demand for mobile phones is 4 per week. $X$ is denoting the number of phones sold in a week.
@@ -144,6 +129,18 @@ $$P(|X - \mu| < k \sigma) \geq 1 - \frac{1}{k^2}$$
 
 $$P(|X - \mu| \geq k \sigma) \leq \frac{1}{k^2}$$
 
+
+??? question "Why is it $\frac{1}{k^2}?$"
+    A general explanation would be to look at the graphs of $\frac{1}{k}$ and $\frac{1}{k^2}$.
+
+    It can be seen that this graph does not look like a bell curve , also it goes in 3rd quadrant too.
+    If we were to plot probability along the y-axis , it would become negative according to this graph.
+    ![](img/image_2023-06-19-00-42-30.png){: style="width:70%;"}
+    <figcaption style="padding:auto"> Graph of $\frac{1}{k}$</figcaption>
+
+    This graph is much more similar to a bell curve and does not go in 3rd quadrant.
+    ![](img/image_2023-06-19-00-54-56.png){: style="width:70%;"}
+    <figcaption style="padding:auto"> Graph of $\frac{1}{k^2}$</figcaption>
 ## More Important Formulas 
 ### Standardized Random Variables 
 A random variable $X$ is said to be standardized if $E[X] = 0 \text{ and } Var(X) = 1$
