@@ -9,7 +9,7 @@
     - [Studify Notes](https://studify.space/notes/ma1001)
     - [kabironline IIT Notes](https://github.com/kabironline/IIT-notes/tree/main/Math-1)
 - **Recommended Books**:
-    - [IITM Mathematics for Data Science](https://drive.google.com/file/d/1SSp2hlu5v46C_GKOlcHqLBxUAdTDJLf0/view)
+   - [IITM Mathematics for Data Science](https://drive.google.com/file/d/1SSp2hlu5v46C_GKOlcHqLBxUAdTDJLf0/view)
 
 ### Statistics 1
 - [Week Wise Lecture Playlist](https://studify.space/course/ns_23q1_ma1002)
