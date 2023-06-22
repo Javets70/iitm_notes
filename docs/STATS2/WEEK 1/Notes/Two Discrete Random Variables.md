@@ -132,6 +132,6 @@ This is just a formula , mug it up 💀.
 $$\begin{align*}
 f_{X_1X_2X_3X_4}(t_1,t_2,t_3,t_4) = P(X_4 = t_4 , X_3 = t_3 , X_2 = t_2 , X_1 = t_1)
 \\
-\implies f_{X_4 \mid X_3 = t_3 , X_2 = t_2 , X_1=t_1}(t_4) \times f_{X_3 \mid X_2 = t_2 , X_1=t_1}(t_3) \times f_{X_2 \mid X_1=t_1}(t_1) \times f_{X_1}(t_1)
+\implies f_{X_4 \mid X_3 = t_3 , X_2 = t_2 , X_1=t_1}(t_4) \times f_{X_3 \mid X_2 = t_2 , X_1=t_1}(t_3) \times f_{X_2 \mid X_1=t_1}(t_2) \times f_{X_1}(t_1)
 \end{align*}$$
 

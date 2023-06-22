@@ -26,15 +26,17 @@ The nullspace (also called kernel) of a matrix A is the set of all vectors x tha
     [1 2]
     [3 6]
     [4 8]
-
     ```
+
     - The 2nd and the 3rd rows are the multiples of the first row.
     - Therefore null space of matrix A is $x_1 + 2x_2 = 0$ 
     - $N(A) = span([-2 , 1])$
       
     !!! note
-        If A is invertible , then $N(A)$ has $\phi$ only and $C(A)$ is the whole space.
+        - If A is invertible , then $N(A)$ has $\phi$ only and $C(A)$ is the whole space.
           (If A is invertible means a unique solution exists for $Ax = b$)
+        - If $N(A)$ has $x_n \neq 0$ then , $Ax = b$ solutions are of the form $x = x_n + x_p$ where,
+        $Ax_p = b ,     Ax_n = 0$ 
 
 
 ## Row Space R(A)
@@ -82,14 +84,15 @@ $\hat{x} = \frac{a^Tb}{a^Ta}$
 $\implies p = \hat{x}a = \frac{a^Tb}{a^Ta}a$
 
 ## Projection matrix 
-$p =(\frac{a^Tb}{a^Ta})a$
 Let $\mathbb{P} = \frac{aa^T}{a^Ta}$ , then projection of $b$ onto $a$ is $\mathbb{P}b$
+
 We can see that to get the projection , we can _left_ multiply the projection matrix on $b$
 
-!!! note "Properties of Projection Matrix"
-    - $\mathbb{p}$ is always symmetric.
-    - $\mathbb{p} = \mathbb{p}^2$ (i.e. its idempotent)
-
+!!! info "Projection Matrix Properties"
+    - Its idempotent , i.e. $\mathbb{P} = \mathbb{P}^2$
+    - It is a symmetric matrix , i.e. $\mathbb{P} = \mathbb{P}^T$
+    - The converse of this is also true , if a matrix is idempotent and symmetric then it is 
+    called a projection matrix.
 
 # Least Squares 
 ## Minimizing Least Sqaures 
@@ -111,14 +114,14 @@ $$E^2 = (2x-b_1)^2 + (3x-b_2)^2 + (4x - b_3)^2$$
 To minimize this we will derivate it w.r.t. x and equate it to zero 
 
 $$\begin{align}
-2[ 2(2x - b_1) + 3(3x - b_2) + 4(4x - b_3)] = 0 \\
-x = \frac{2b_1 + 3b_2 + 4b_3}{2^2 + 3^2 + 4^2}
+2[ 2(2x - b_1) + 3(3x - b_2) + 4(4x - b_3)] &= 0 \\
+x &= \frac{2b_1 + 3b_2 + 4b_3}{2^2 + 3^2 + 4^2}
 \end{align}$$
 
 We can see that $x$ is very similar to the projection matrix $\frac{a^Tb}{a^Ta}$ with $a = \begin{pmatrix} 2 \\ 3 \\ 4\end{pmatrix}$
 
-Projection of $b$ onto $S$ is $p = A\hat{x}$
-Orthogonal vector $e = b - p = b - A\hat{x}$
+- Projection of $b$ onto $S$ is $p = A\hat{x}$
+- Orthogonal vector $e = b - p = b - A\hat{x}$
 
 !!! note
     - $e \perp$ to every vector in $C(A)$.
@@ -133,25 +136,33 @@ Orthogonal vector $e = b - p = b - A\hat{x}$
         - This equation gives the projection of $b$ onto $C(A)$
         - Even if $Ax =b$ has no solution , this equation has a solution
 
-### Properties 
-#### When columns of $a$ are linearly independent 
-then ,  $a^ta$ is invertible 
-solving $a^ta\hat{x} = a^tb$ when $(a^ta)$ is invertible gives $\hat{x} = (a^ta)^{-1}a^tb$
+!!! info "Properties"
+    **When columns of $A$ are linearly independent**:-
 
-projection $\mathbb{p} = a\hat{x} = a(a^ta)^{-1}a^tb$
+    - $A^TA$ is invertible 
+    - Solving $A^TA\hat{x} = A^Tb$ when $(A^TA)$ is invertible gives $\hat{x} = (A^TA)^{-1}A^Tb$
+    - Projection $\mathbb{P} = A\hat{x} = A(A^TA)^{-1}A^Tb$
 
-#### When $b$ belongs to $c(a)$ , $\mathbf{ax= b}$
-$\mathbb{p} = a(a^ta)^{-1}a^tb = a(a^ta)^{-1}a^tax = ax = b$
+    ---
+    **When $b$ belongs to $C(A)$ , $\mathbf{Ax= b}$**:-
 
-#### When $b$ belongs to $n(a^t)$ 
-$\mathbb{p} = a(a^ta)^{-1}a^tb = 0$ , since $a^tb = 0$
+    - $\mathbb{P} = A(A^TA)^{-1}A^Tb = A(A^TA)^{-1}A^TAx = Ax = b$
 
-#### When $a$ is a square matrix and inveritible
-$\mathbb{P} = A(A^TA)^{-1}A^Tb = b$
+    ---
+    **When $b$ belongs to $N(A^T)$** :-
 
-# Projection Matrix Properties 
-- Its idempotent , i.e. $\mathbb{P} = \mathbb{P}^2$
-- It is a symmetric matrix , i.e. $\mathbb{P} = \mathbb{P}^T$
+    - $\mathbb{P} = A(A^TA)^{-1}A^Tb = 0$ , since $A^Tb = 0$
+
+    ---
+    **When $A$ is a square matrix and inveritible** :-
+
+    - $\mathbb{P} = A(A^TA)^{-1}A^Tb = b$
+
+    ---
+    **When $A$ is rank one**:-
+    
+    - $\hat{x} = \frac{a^{T}a}{a^{T}b}$
+
 
 
 
