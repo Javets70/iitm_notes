@@ -44,48 +44,14 @@ SD(X) = \sqrt{Var(X)} \end{align}$$
         - **If X and Y are independent** : $Var(X+Y) = Var(X) + Var(Y)$
 
 ## Types of Random Variables 
-### Uniform Random Variable 
-Given that , $X \sim \text{Uniform} \{a , a+1 , a+2 , ... b\}$
 
-$$E[X] = \frac{a+b}{2}$$
-
-#### Variance 
-$$ Var(X) = \frac{(b-a)^2}{12} = \sigma^2 $$
-
-
-### Geometric Random Variable
-Given that , $X \sim \text{Geometric}(p)$
-
-$$E[X] = \sum^{\infty}_{t=1} t(1-p)^{t-1}p = \frac{1}{p}$$
-
-#### Variance 
-$$Var(X) = \frac{1-p}{p^2} = \sigma^2$$
-
-
-### Poisson Random Variable 
-Given that , $X \sim \text{Poisson}(\lambda)$
-
-$$E[X] = \sum^{\infty}_{t = 0} t \times e^{- \lambda} \times \frac{\lambda ^ {t}}{t!} = \lambda$$
-
-#### Variance 
-$$Var(X) = \lambda = \sigma^2$$
-
-
-### Binomial Random Variable 
-Given that , $X \sim \text{Binomial}(n,p)$
-
-$$E[X] = \sum^{n}_{t=0} t \times {n \choose x} p^t (1-p)^{n-t} = np$$
-
-#### Variance 
-$$Var(X) = np(1-p) = \sigma^2$$
-
-### Bernoulli Random Variable 
-Given that , $X \sim \text{Bernoulli}(p)$
-
-$$E[X] = 0(1-p) + p = p$$
-
-#### Variance 
-$$Var(X) = p(1-p) = \sigma^2$$
+| Random Variables          | Expectation                                                                              | Variance             |
+|---------------------------|------------------------------------------------------------------------------------------|----------------------|
+| Uniform Random Variable   | $\frac{a+b}{2}$                                                                          | $\frac{(b-a)^2}{12}$ |
+| Geometric Random Variable | $\sum^{\infty}_{t=1} t(1-p)^{t-1}p = \frac{1}{p}$                                        | $\frac{1-p}{p^2}$    |
+| Poisson Random Variable   | $\sum^{\infty}_{t = 0} t \times e^{- \lambda} \times \frac{\lambda ^ {t}}{t!} = \lambda$ | $\lambda$            |
+| Binomial Random Variable  | $\sum^{n}_{t=0} t \times {n \choose x} p^t (1-p)^{n-t} = np$                             | $np(1-p)$            |
+| Bernoulli Random Variable | $0(1-p) + p = p$                                                                         | $p(1-p)$             |
 
 ## Bounds In Probabilities 
 !!! question "How do Probability bounds even work?"
