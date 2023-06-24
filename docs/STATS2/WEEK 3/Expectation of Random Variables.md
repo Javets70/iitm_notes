@@ -119,8 +119,28 @@ $$\frac{X - E[X]}{SD(X)}$$
 is a standardized random variable.
 
 ### Covariance Formula
+??? question "What is Covariance?"
+    Covariance is a statistical measure that quantifies the relationship between two random variables. It measures how changes in one variable are associated with changes in another variable. In other words, covariance indicates the degree to which two variables vary together.
+
 $$Cov(X,Y) = E[XY] - E[X] \times E[Y]$$
 
+!!! info "Properties of Covariance"
+    The formula calculates the average of the product of the deviations of X and Y from their respective means. 
+
+    - If the covariance is positive, it indicates that as one variable increases, the other tends to increase as well. 
+    - If the covariance is negative, it indicates an inverse relationship, meaning that as one variable increases, the other tends to decrease. 
+    - A covariance of zero suggests no linear relationship between the variables.
+
 ### Correlation Coefficient 
+??? question "What is Correlation Coefficient"
+    The correlation coefficient is a statistical measure that quantifies the strength and direction of the linear relationship between two variables. It provides a numerical value between -1 and 1 that indicates the degree of association between the variables.
+
 $$Cor(X,Y) = \frac{Cov(X,Y)}{SD(X) \times SD(Y)}$$
 
+!!! info "Properties of Correlation Coefficient"
+    Let correlation coefficient be denoted as r
+
+    - If r = 1, it indicates a perfect positive correlation, meaning that the variables have a strong linear relationship and move in the same direction.
+    - If r = -1, it indicates a perfect negative correlation, meaning that the variables have a strong linear relationship but move in opposite directions.
+    - If r = 0, it indicates no linear correlation, meaning that the variables have no linear relationship.
+    - A correlation coefficient closer to 1 or -1 indicates a stronger linear relationship, while a value closer to 0 indicates a weaker or no linear relationship.
