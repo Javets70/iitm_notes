@@ -74,6 +74,9 @@ nav:
     - Machine Learning Foundations:
       - Week 3:
         - Four Fundamental Subspaces: "MLF/WEEK 3/Four Fundamental Subspaces.md"
+      - Linear Algebra and Its Applications (Solutions):
+        - Whats this for? : "MLF/G Strang Solutions/Introduction.md"
+        - Matrices and Gaussian Elimination (Chapter 1) : "MLF/G Strang Solutions/Chapter 1.md"
     - Business Data Management:
       - Week 1: "BDM/WEEK 1/Consumption.md"
       - Week 2: 

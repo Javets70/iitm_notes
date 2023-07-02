@@ -17,6 +17,8 @@ that price of that good.
 It is the percentage change in quantity demanded divided by the percentage
 change in price. Only the absolute value of the result is taken into consideration.
 
+$$ \frac{\text{Change in Quantity Demanded}}{\text{Change in Price}}$$
+
 ### Determinants of Price Elasticity of Demand
 - **Availability of close substitutes** : Goods with close substitutes have
 more elastic demand.
@@ -72,6 +74,8 @@ How much the quantity demanded of a good responds to a change in consumers' inco
 It is the percentage change in the quantity demanded divided by the percentage change
 in income.
 
+$$\frac{\text{Change in Quantity Demanded}}{\text{Change in Income}}$$
+
 ### Classification of Goods 
 #### Normal Goods 
 - **Positive Income Elasticity**
@@ -86,6 +90,9 @@ How much the quantity demanded of one good responds to a change in price of anot
 
 It is the percentage change in quantity of demanded of first good divided by the 
 percentage change in the price of the second good.
+
+
+$$\frac{\text{Change in Quantity Demanded of Some Good}}{\text{Change in Price of Second Good}}$$
 
 ### Classification of Goods 
 #### Substitutes 
