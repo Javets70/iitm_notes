@@ -109,6 +109,8 @@ $$P(|X - \mu| \geq k \sigma) \leq \frac{1}{k^2}$$
     <figcaption style="padding:auto"> Graph of $\frac{1}{k^2}$</figcaption>
 ## More Important Formulas 
 ### Standardized Random Variables 
+Standardized random variables are used to transform data from different distributions into a common scale, allowing for meaningful comparisons and analysis.
+
 A random variable $X$ is said to be standardized if $E[X] = 0 \text{ and } Var(X) = 1$
 
 Also,
@@ -117,6 +119,13 @@ If $X$ is a random variable.  Then,
 $$\frac{X - E[X]}{SD(X)}$$
 
 is a standardized random variable.
+
+??? question "What is the use of Standardized Random Variables?"
+    - Statistical Analysis: Standardization allows for meaningful comparisons of variables with different scales and distributions.
+    - Hypothesis Testing: Standardized variables help meet assumptions of normality in tests and improve accuracy.
+    - Z-Scores: Provide a common reference point for comparing data points and identifying outliers.
+    - Data Visualization: Simplifies plotting variables with different scales together for easier analysis.
+    - Machine Learning: Standardization is a preprocessing step to ensure features are on a similar scale for better model performance.
 
 ### Covariance Formula
 ??? question "What is Covariance?"

@@ -114,7 +114,7 @@ price discrimination
     not have the ability to pay more for a service - you subsidize the price and
     customer#2 has ability to pay more - you charge more to recover from
     subsidizing the price for customer#1, electricity is another example, classes in
-    train trave
+    train travel , etc.
 
 ### Penetration Pricing 
 - Pricing set to penetrate the market

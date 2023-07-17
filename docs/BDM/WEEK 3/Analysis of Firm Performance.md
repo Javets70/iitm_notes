@@ -78,7 +78,7 @@ Profitability measures look at how much profit the firm generates from sales
 or its capital assests.
 
 #### Different Measures of Profit 
-- **Gross Profit** : Effectively total revenue (turnover) - variable costs (cost of sales)
+- **Gross Profit** : Effectively total revenue (turnover) - cost of goods sold
 
     !!! info "Gross Profit Margin"
         Gross Profit Margin = Gross Profit / Turnover * 100

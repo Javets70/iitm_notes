@@ -18,8 +18,12 @@ Let a discrete random variable $X$ have a CDF $F_X$. Assume that $Y = \frac{X - 
 
 $$F_Y(y) = F_X(\mu + Y \sigma)$$
 
-# Continuous Random Variable 
+## Continuous Random Variable 
+!!! example inline end
+    Height , Weight , Time , Temperature , Price , etc.
+
 A continuous random variable is a type of random variable that can take on any value within a specified range or interval. Unlike discrete random variables, which can only assume a countable set of distinct values, continuous random variables have an infinite number of possible values within a given range.
+
 
 A random variable $X$ with CDF $F_X(x)$ is said to be continuous random variable if $F_X(x)$ is continuous at every $x$.
 
