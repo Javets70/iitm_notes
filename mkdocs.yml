@@ -108,6 +108,8 @@ extra:
       link : https://github.com/kabironline/IIT-notes
       name : Maths2 Notes Contributor
       title : Hello
+
+
 # EXTENSIONS AND CSS
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -117,6 +119,7 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
   - md_in_html
+  - mdx_math
 
 extra_javascript:
   - javascripts/mathjax.js
@@ -126,6 +129,4 @@ extra_javascript:
 extra_css:
   - stylesheets/extra.css
 
-
-    
 

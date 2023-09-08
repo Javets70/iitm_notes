@@ -1,6 +1,26 @@
 ##
 # Functions of Continuous Random Variables 
+
+!!! question "Why do we need functions of continuous random variables?"
+    We may model one quantity as a random variable $X$. We may have to work with 
+    another closely related quantity.
+    
+    !!! example 
+        Length of a square = $X$
+
+        Area of a square = $Y = g(X) = X^2$
+
 ## CDF of g(X)
+If $X$ is a continuous random variable and $Y=g(X)$ is a function of $X$ , then $Y$ itself is 
+a random variable. Thus we should be able to find the CDF and PDF of $Y$.
+
+!!! note "Relationship between PDF and CDF of a Random Variable"
+    <!-- CDF $\xrightleftharpoons[\text{integration}]{\text{differentiation}}$ PDF -->
+
+
+    CDF $\overset{\text{differentiation}}{\underset{\text{integration}}{\rightleftarrows}}$ PDF
+
+
 - Suppose $X$ is a continuous random variable with CDF $F_X$ and PDF $f_X$
 - Suppose $g : \mathbb{R} \to \mathbb{R}$ is a function.
 - Then , $Y = g(X)$ is a random variable with CDF $F_Y$ determined as follows.
@@ -45,12 +65,25 @@ $$ f_Y(y) = \frac{1}{|a|}f_X(\frac{y-b}{a}) $$
 
     $$ Y = \frac{X - \mu}{\sigma} \sim Normal(0,1) $$
 
-# Expectation 
-Let $X$ be a continuous random variable with density $f(x)$. Let $g : \mathbb{R} \to \mathbb{R}$ be a function. The expected value of $g(X)$, denoted $E[g(X)]$ is given by 
+## Expectation 
+Let $X$ be a continuous random variable with density $f(x)$. 
+
+$$E[X] = \int^{\infty}_{- \infty} x \times f_X(x)dx$$
+
+Also ,
+
+$$E[X^2] = \int^{\infty}_{- \infty} x^2 \times f_X(x)dx$$
+
+Let $g : \mathbb{R} \to \mathbb{R}$ be a function. The expected value of $g(X)$, denoted $E[g(X)]$ is given by 
 
 $$ E[g(X)] = \int^{\infty}_{ - \infty} g(X)f_X(x)dx $$
 
-whenever the above integral exists.
+whenever the above integrals exists.
+
+!!! question "What is the formula for Variance?"
+    The formula for variance remains the same
+
+    $$\text{Var}(X) = E[X^2] - (E[X])^2$$
 
 ### Formulas 
 | Distribution                                      | PDF                                                                                   | CDF                                                                                              | Expectation                | Variance                         |
