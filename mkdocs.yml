@@ -56,6 +56,10 @@ nav:
         - AQ Solutions: "STATS2/WEEK 4/AQ Solutions.md"
       - Week 5:
         - Functions of Continuous Random Variables: "STATS2/WEEK 5/Functions of Continuous Random Variables.md"
+        - AQ Solutions: "STATS2/WEEK 5/AQ Solutions.md"
+      - Week 6:
+        - Joint Continuous Random Variables: "STATS2/WEEK 6/Joint Continuous Random Variables.md"
+
 
     - Maths2:
       - Week 1:
@@ -119,7 +123,6 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
   - md_in_html
-  - mdx_math
 
 extra_javascript:
   - javascripts/mathjax.js
