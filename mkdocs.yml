@@ -86,6 +86,12 @@ nav:
       - Linear Algebra and Its Applications (Solutions):
         - Whats this for? : "MLF/G Strang Solutions/Introduction.md"
         - Matrices and Gaussian Elimination (Chapter 1) : "MLF/G Strang Solutions/Chapter 1.md"
+
+    - Machine Learning Techniques:
+      - Week 1:
+        - Representation Learning: "MLT/WEEK 1/Representation Learning.md"
+        
+
     - Business Data Management:
       - Week 1: "BDM/WEEK 1/Consumption.md"
       - Week 2: 
