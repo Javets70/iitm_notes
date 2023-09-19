@@ -235,3 +235,45 @@ Hence , we get a set of Orthonormal Vectors.
         This means that now the dataset can be represented with $\mathbf{d \times k + d \times n}$
         points instead of $d \times n$ points.
 
+### Linear Algebra Perspective of the "Algorithm"
+Our original problem was 
+
+$$ \max_{w_{||w||^2 = 1}} w^TCw $$
+    
+where $C = \frac{1}{n}\sum_{i=1}^{n}x_ix_i^T$ , and the solution for this problem 
+was the **eigenvector corresponding to the maximum eigenvalue**.
+
+We also observed that the set of eigenvectors $(\{w_1 , w_2 , .... w_d\})$ coresspnding to the eigenvalues of $C$
+form an orthonormal basis. 
+
+Now lets look at this problem in a more "linear algebraic" way,
+
+We know,
+
+$$\begin{equation*}
+\begin{split}
+Cw_1 &= \lambda_1 w_1 \\ 
+w_1^TCw_1 &= w_1^T(\lambda_1w_1) = \lambda_1 \\
+\lambda_1 &= w_1^TCw_1 = w_1^T(\frac{1}{n}\sum_{i=1}^{n}x_ix_i^T)w_1
+\lambda_1 &= \frac{1}{n}\sum_{i=1}^{n}(x_i^Tw_1)^2
+\end{split}
+\end{equation*}$$
+
+!!! note "Relation between Variance and $\mathbf{\lambda}$"
+    For an arbitrary set of points $(\{(x_1^Tw) , (x_2^Tw) ...... (x_n^T)w   \})$
+    projected onto line represented by vector $w$.
+
+    ![](img/variance_is_lambda.png)
+
+    The average $\mu$ of the projected points will be $\frac{1}{n}\sum_{i=1}^{n}(x_i^Tw)$.
+    If the data is centered then,
+
+    $$\frac{1}{n}\sum_{i=1}^{n}(x_i^Tw) = (\frac{1}{n}\sum_{i=1}^{n}x_i)w = 0w = 0$$
+
+    This implies that average for a centered dataset is $\mu = 0$.
+
+    The variance of this same dataset will be ,
+
+    $$\frac{1}{n}\sum_{i=1}{n}(x_i^Tw - \mu)^2 = \frac{1}{n}\sum_{i=1}^{n}(x_i^Tw)^2$$
+
+    We can see that the variance is same as $\lambda$ required to solve the maximization problem.
