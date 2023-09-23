@@ -90,6 +90,13 @@ nav:
     - Machine Learning Techniques:
       - Week 1:
         - Representation Learning: "MLT/WEEK 1/Representation Learning.md"
+      - Week 2:
+        - Kernel PCA: "MLT/WEEK 2/Kernel PCA.md" 
+
+    - Business Analytics:
+      - Week 1:
+        - Data Visualisation : "BA/WEEK 1/Data Visualisation.md"
+
         
 
     - Business Data Management:
