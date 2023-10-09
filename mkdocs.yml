@@ -60,6 +60,10 @@ nav:
       - Week 6:
         - Joint Continuous Random Variables: "STATS2/WEEK 6/Joint Continuous Random Variables.md"
         - AQ Solutions: "STATS2/WEEK 6/AQ Solutions.md"
+      - Week 7:
+        - Empirical Distributions and Descriptive Statistics: "STATS2/WEEK 7/Empirical Distribution and Descriptive Statistics.md"
+      - Week 8:
+        - Central Limit Theorem : "STATS2/WEEK 8/Central Limit Theorem.md" 
 
     - Maths2:
       - Week 1:
@@ -92,12 +96,8 @@ nav:
         - Representation Learning: "MLT/WEEK 1/Representation Learning.md"
       - Week 2:
         - Kernel PCA: "MLT/WEEK 2/Kernel PCA.md" 
-
-    - Business Analytics:
-      - Week 1:
-        - Data Visualisation : "BA/WEEK 1/Data Visualisation.md"
-
-        
+      - Week 3:
+        - Clustering: "MLT/WEEK 3/Clustering.md"
 
     - Business Data Management:
       - Week 1: "BDM/WEEK 1/Consumption.md"

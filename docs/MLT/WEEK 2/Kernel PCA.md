@@ -22,8 +22,8 @@ much much greater than the number of points in the dataset , i.e.
 $d >> n$.
 
 According to our algorithm the solution for maximizing the variance 
-of the dataset was to find the eigenvalue corresponding to the max 
-eigenvector of $C$ , where $C = \frac{1}{n}\sum_{i=1}^{n}x_ix_i^T$
+of the dataset was to find the eigenvector corresponding to the max 
+eigenvalue of $C$ , where $C = \frac{1}{n}\sum_{i=1}^{n}x_ix_i^T$
 
 if $X \in \mathbb{R}^{d \times n}$ is the matrix which represents 
 all the points in the dataset , $C$ can also be written as $C = \frac{1}{n}XX^T$
