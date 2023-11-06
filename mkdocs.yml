@@ -65,6 +65,9 @@ nav:
       - Week 8:
         - Central Limit Theorem : "STATS2/WEEK 8/Central Limit Theorem.md" 
         - AQ Solutions: "STATS2/WEEK 8/AQ Solutions.md"
+      - Week 9:
+        - Parameter Estimation: "STATS2/WEEK 9/Parameter Estimation.md"
+
 
     - Maths2:
       - Week 1:
@@ -99,6 +102,12 @@ nav:
         - Kernel PCA: "MLT/WEEK 2/Kernel PCA.md" 
       - Week 3:
         - Clustering: "MLT/WEEK 3/Clustering.md"
+      - Week 4:
+        - Estimation: "MLT/WEEK 4/Estimation.md"
+      - Week 5:
+        - Supervised Learning : "MLT/WEEK 5/Supervised Learning.md"
+      - Week 6:
+        - Regression: "MLT/WEEK 6/Regression.md"
 
     - Business Data Management:
       - Week 1: "BDM/WEEK 1/Consumption.md"
