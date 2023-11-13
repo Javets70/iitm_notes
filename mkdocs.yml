@@ -96,6 +96,8 @@ nav:
         - Matrices and Gaussian Elimination (Chapter 1) : "MLF/G Strang Solutions/Chapter 1.md"
 
     - Machine Learning Techniques:
+      - Solved PYQ:
+        - Quiz 1: "MLT/Solved PYQ/Quiz1 PYQ.md"
       - Week 1:
         - Representation Learning: "MLT/WEEK 1/Representation Learning.md"
       - Week 2:
