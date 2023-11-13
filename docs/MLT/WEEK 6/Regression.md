@@ -274,3 +274,92 @@ satisfy the constrained ridge regression equation.
 !!! abstract "Conclusion"
     We can see that Ridge Regression pushes the values in the wieght vector ($w$)
     to 0 , but does not necessarily make them 0.
+
+## Relation betwen solution of Linear Regression and Lasso Regression 
+> Our goal here is to change the regularizer in ridge regression 
+equation in such a way that the elliptical contours around $\hat{w}_{\text{ML}}$ 
+hit at a point where some of the features become zero.
+
+We know that ridge regression pushes feature values towards 0. But does not 
+necessarily make it 0.
+
+An alternate way to regularize would be to use $||\cdot||_1$ norm instead 
+of $||\cdot||^2_2$ norm.
+
+$$ ||w||_1 = \sum_{i=1}^d | w_i | $$
+
+For L1 Regularization , 
+
+$$\begin{equation*}
+\begin{split}
+& \underset{w \in \mathbb{R}^d}{\min} \sum_{i=1}^{n} (w^T x_i - y_i)^2 + \lambda ||w||_1\\
+\\
+& \text{which is similar to} \\ 
+\\ 
+& \underset{w \in \mathbb{R}^d}{\min} \sum_{i=1}^{n} (w^T x_i - y_i)^2 \\
+& \text{such that}\\
+\\
+||w||_1 \leq \theta \\
+\end{split}
+\end{equation*}$$
+
+When compared to L2 Constraint on the regularizer , 
+this is how L1 constraint would look like 
+
+![](img/l2_constraint.png)
+
+Now when we keep increasing the size of the elliptical contours 
+around $\hat{w}_{\text{ML}}$ our hope is that it touches the point 
+where some of the features of weight vector become zero.
+
+![](img/lass_regression.png)
+
+> When looking at this , one can argue that the elliptical contours 
+will not always touch red area in such a way that one of the weight
+vectors becomes 0; Which is true when looking at it in a 2d subspace ,
+but in higher dimensions the typical case is when some of weight vectors 
+become 0.
+
+This way of using L1 Regularizer is called LASSO (Least Absolute Shrinkage and
+Selection Operator)
+
+## Characteristics of Lasso regression 
+> We know now that lasso regression makes certain weight vectors zero , 
+so why not always use lasso?
+
+Advantages of using Ridge Regression vs Lasso Regression,
+
+- Lasso Regression does not have a closed form solution.
+- Sub-gradient methods are usually used to solve for Lasso Regression.
+
+### What are Sub-Gradients?
+For a piecewise linear function at the point $x$ (purple) point the function 
+is not differentiable , sub-gradient provide a lower bound for this function at 
+$x$ (purple point).
+
+At the blue point the function is differentiable and hence only 1 sub-gradient exists
+which is the gradient/slope itself.
+![](img/sub_gradient.png)
+
+> Now , what is the use of sub-gradients in lasso regression?
+We know that the regularizer in lasso regression takes the absolute values of 
+weight vectors, 
+
+At the origin (green point) finding the differential is not 
+possible , hence we bound the function using sub-gradients.
+
+![](img/lass_sub_gradients.png)
+
+Any sub-gradient between $[-1,1]$ lower bounds the function ($|x|$).
+
+!!! note "Definition of Sub-Gradients"
+    A vector $g \in \mathbb{R}^d$ is a sub-gradient of $f:\mathbb{R}^D \to \mathbb{R}$ at 
+    a point $x \in \mathbb{R}^d$ , if 
+
+    $$\forall z \;\;\;\;\;\;\;\;\; f(z) \geq f(x) + g^T(z - x)$$
+
+    ![](img/sub_grad_definition.png) 
+
+!!! question "Whats the use of Sub-Gradients?"
+    If function $f$ to minimize is a convex function , then 
+    sub-gradient descent converges.
