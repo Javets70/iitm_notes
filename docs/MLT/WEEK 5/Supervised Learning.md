@@ -46,7 +46,7 @@ but impose a certain structure to reduce our search space.
 One of the simplest structures we could impose is a linear 
 structure.
 
-![](img/image_2023-10-30-22-07-59.png)
+![](img/linear_structure.png)
 
 Now our modified goal is 
 
@@ -89,7 +89,7 @@ Lets say for a dataset with number of features to be 2
 
 > How can we interpret $w^* = (XX^T)^\dagger(Xy)$ geometrically?
 
-Now if we draw an $n$ dimensional space , in our case its 3,
+Now if we draw an $n$ dimensional space , in our case its $n =3$,
 the first vector that we will have will be in $\mathbb{R}^3$ and the other 
 vector also in $\mathbb{R}^3$.
 
@@ -100,8 +100,8 @@ vector also in $\mathbb{R}^3$.
 Now we plot the label in the same $\mathbb{R}^3$ subspace.
 ![](img/label_plot.png)
 
-We can see that the linear combinations of the features will lie in 
-the same plane as the features themselves.
+We can see that the linear combinations of the features (green vectors)
+will lie in the same plane as the features themselves.
 
 
 Now if we also plot the label vector ($y$) onto the same $\mathbb{R}^3$
@@ -142,6 +142,77 @@ $$y^T X^T ((XX^T)^\dagger Xy) - ((XX^T)^\dagger Xy)^T (XX^T) (XX^T)^\dagger Xy =
 
 With this equation we basically prove that the solution $\alpha^*$ we were looking for 
 is the same as $w^*$
+
+## Gradient Descent 
+> We know that $w^*$ has a closed form solution which is $w^* = (XX^T)^\dagger Xy$,
+but it is computationally expensive to compute $w^*$ as it takes $O(d^3)$ iterations.
+Also, solving for $w^*$ is an unconstrained optimization problem , which can be solved
+using the method of Gradient Descent.
+
+Gradient Descent is an iterative way to find minimizers of functions using just
+first order information , which is gradient of the function (vector of partial 
+derivatives).
+
+$$ w^{t+1} = w^t - \eta_t \nabla f(w^t) $$
+
+> The gradient tells you the direction where function will increase , instead ,
+when doing gradient descent we move opposite to the direction of the gradient 
+along the function , where it gradually decreases.
+
+> - $\eta_t$ is a scalar value and it is the step-size we take to move along the function.
+- $f(w^t)$ gives us the direction of the gradient.
+
+> After some iterations , we eventually reach the global minima of the function.
+
+Our original Mean Squared Error function was,
+
+$$\begin{equation*}
+\begin{split}
+f(w) &= ||Xw - y||^2 = \sum_{i=1}^{n} (w^T x_i - y_i)^2 \\
+\nabla f(w) &= 2 (XX^T)w - 2Xy \\
+\end{split}
+\end{equation*}$$
+
+Now we can use this gradient of $f(w)$ in the gradient descent equation,
+
+$$ w^{t+1} = w^t - \eta_t [2(XX^T)w - 2Xy] $$
+
+This solves the problem of not having to compute the inverse of $XX^T$ , which
+takes $O(d^3)$ iterations. Using gradient descent to calculate $w^*$ makes it
+less computationally expensive.
+
+> Now what to do if $n$ is too large, we know that $XX^T$ is a $d \times n * n * \times d$
+matrix , just to calculate $XX^T$ there is an inner dependency of $n$, hence it becomes 
+computationally expensive to solve for $XX^T$.
+
+> Is there any way we can avoid computing $XX^T$?
+
+### Stochastic Gradient Descent
+for $t = 1,2,3 ...... T$ 
+
+- At each step sample a bunch ($k$) of datapoints uniformly at random from the set of 
+all datapoints.
+- Pretend as if this sample ($k$ datapoints) is the entire dataset and take a gradient 
+step with respect to it, 
+
+$$2(\tilde{X}\tilde{X}^T w^t - \tilde{X} \tilde{y})$$
+
+where $\tilde{X}$ is the sampled ($k$) datapoints and $\tilde{y}$ are the labels corresponding 
+to the datapoints.
+
+> This makes calculating $XX^T$ managable as we only take $k$ points at a time.
+
+After $t$ rounds , use 
+
+$$ w^T_{\text{SGD}} = \frac{1}{T} \sum_{i=1}^{t} w^t $$ 
+
+> At the end we basically take the average of the $w^t$ obtained after several iterations ,
+though the direction of descent may be noisy at first but in a typical case the average usually
+gives out the $w^*$ with least possible noise.
+
+!!! note ""
+    Stochastic Gradient Descent is always guaranteed to converge to optima with high
+    probability.
 
 ## Kernel Regression 
 Our goal here is to map the data points to a higher dimensional space and 
@@ -216,8 +287,59 @@ K^2 \alpha^* &= Ky \\
 
 $K = X^T X$ , is the kernel matrix.
 
+### Prediction
+We know that,
 
-IDK WHAT THIS MEANS !!!!!!!!
-![](img/prediction.png)
+$$ w = \sum_{i=1}^n \alpha_i x_i $$
 
-![](img/prediction2.png)
+Also Prediction $= w^T x_{\text{test}}$ ,
+
+$$\begin{equation*}
+\begin{split}
+w^T x_\text{test} &= (\sum_{i=1}^n \alpha_i x_i )^T x_\text{test} \\
+&= \sum_{i=1}^n \alpha_i (x_i^T x_\text{test}) \\
+&= \sum_{i=1}^n ( \phi(x_i)^T \phi(x_\text{test}) ) \\
+&= \sum_{i=1}^n \alpha_i K (x_i , x_\text{test}) \\
+\end{split}
+\end{equation*}$$
+
+where $\alpha_i$ shows how important is $i^\text{th}$ point 
+towards $w^*$ and $K(x_i , x_\text{test})$ shows how similar
+is $x_\text{test}$ to $x_i$.
+
+## Probabilistic view of Linear Regression 
+In a linear regression problem we know that , $x \in \mathbb{R}^d$ , $y \in \mathbb{R}$ 
+for a set of datapoints $\{ (x_1 , y_1) , (x_2 , y_2) , ..... (x_n , y_n) \}$.
+
+The probabilistic we are going to assume is as follows,
+
+$$ y|x \sim w^T x + \epsilon $$
+
+For a given feature theres is an *unknown but fixed* $w \in \mathbb{R}^d$ and 
+$\epsilon$ is a zero-mean gaussian ($\mathcal{N}(0 , \sigma^2)$)noise.
+
+> Now we can view this as an estimation problem and solve it using the 
+maximum likelihood approach.
+
+The likelihood function will be ,
+
+$$\begin{equation*}
+\begin{split}
+\mathcal{L}(w ; \substack{x_1 , x_2 , ... x_n \\ y_1 , y_2 , ... y_n} ) &= \prod_{i=1}^n e^{- \frac{(w^Tx_i - y_i)^2}{2 \sigma^2}} \times \frac{1}{\sqrt{2 \pi} \sigma} \\
+\log \mathcal{L}(w ; \substack{x_1 , x_2 , ... x_n \\ y_1 , y_2 , ... y_n} ) &= \sum_{i=1}^n  \frac{-(w^Tx_i - y_i)^2}{2 \sigma^2} \times \frac{1}{\sqrt{2 \pi} \sigma} \\
+\\
+\text{equivalently} \\
+\\
+&= \underset{w}{\max} \sum_{i=1}^{n} - (w^T x_i - y_i)^2 \\
+&= \underset{w}{\min} \sum_{i=1}^n (w^Tx_i - y_i)^2 \\
+\end{split}
+\end{equation*}$$
+
+**Note** that the mean of the distribution becomes $w^Tx + 0$ as $\epsilon$ is a 
+zero-mean gaussian distribution , which makes the final distribution to be 
+$\mathcal{N}(w^Tx , \sigma^2)$
+
+Also, we ignored the constants in the later half of the derivation because they are,
+you guessed it , constants. :p
+
+Finally from this we can conclude that $w^* = w_\text{ML} = (XX^T)^\dagger Xy$
