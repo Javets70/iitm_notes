@@ -312,7 +312,7 @@ Now when we keep increasing the size of the elliptical contours
 around $\hat{w}_{\text{ML}}$ our hope is that it touches the point 
 where some of the features of weight vector become zero.
 
-![](img/lass_regression.png)
+![](img/lasso_regression.png)
 
 > When looking at this , one can argue that the elliptical contours 
 will not always touch red area in such a way that one of the weight

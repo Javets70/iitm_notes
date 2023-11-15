@@ -110,6 +110,8 @@ nav:
         - Supervised Learning : "MLT/WEEK 5/Supervised Learning.md"
       - Week 6:
         - Regression: "MLT/WEEK 6/Regression.md"
+      - Week 7:
+        - Classification: "MLT/WEEK 7/Classification.md"
 
     - Business Data Management:
       - Week 1: "BDM/WEEK 1/Consumption.md"
