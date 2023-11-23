@@ -1,3 +1,7 @@
+!!! note 
+    Throughout the diagrams I have used red color to indicate a +1 or 
+    positive label and blue color for -1 or a negative label 
+
 # Classification
 ## Introduction to Binary Classification 
 For a set of datapoints $\{ x_1 , x_2 , x_3 ... x_n \}$ where 
@@ -171,3 +175,130 @@ The output of this algorithm is a "Decision Tree".
     decision based on the value of a specific feature, each branch 
     represents the outcome of that decision, and each leaf node 
     represents the final predicted outcome or class label.
+
+![](img/decision_tree.png)
+
+> How do we get a prediction for a point?
+
+To get the prediction of a datapoint $x_\text{test}$ , we simply 
+traverese through the decision tree , asking questions until we 
+reach the leaf nodes.
+At the end we assign the value of the leaf node to $y_\text{test}$.
+
+The model here (which wasnt in there in KNN) is the decision tree ,
+after training our dataset on the decision tree , we can get rid of 
+the dataset and predict new "test points" by solely relying on the 
+decision tree.
+
+!!! question "Whats a question in a decision tree?"
+    In a decision tree , a question is a feature-value 
+    pair.
+
+    Where the "feature" is the feature in the datapoint
+    and the "value" is the number with which we compare 
+    the "feature".
+
+> How to measure goodness of a question?
+
+For a dataset $D = \{ (x_1 , y_1), (x_2 , y_2), ... (x_n , y_n) \}$ , for 
+a particular feature , we want to ask such a question that (ideally) it 
+matches each datapoint to its label , in other words our predicition 
+should be the same as the labels assigned to a datapoint in the dataset 
+$D$.
+
+In reality , such questions may not exist , this means we have to somehow
+capture the notion of "impurity" for these questions.
+
+### Measure of impurity for a set of datapoints 
+For a dataset $D = \{ (x_1 , y_1), (x_2 , y_2), ... (x_n , y_n) \}$ , an
+"impurity" function for a question can be given as 
+
+$$\begin{equation*}
+\begin{split}
+\text{Entropy}(y_1 , y_2 , ... y_n) &= \text{Entropy}(p) \\
+&= - (p \log p + (1-p) \log (1-p) ) \;\;\;\;\;\;\;\; [\text{convention} \;\; \log 0 = 0]
+\end{split}
+\end{equation*}$$
+
+![](img/entropy_function.png)
+
+- When $p=0$ or $p=1$ , it means that all of the datapoints 
+are classified to a single label.
+- At $p=0.5$ , entropy is the highest , hence its the worst case.
+- **Note** that the entropy at $p$ and $1-p$ is always the same.
+- By convention , $p = \frac{\text{Total Number of 1s}}{\text{Total Number of DataPoints}}$
+
+> We know that for a given question , we assign labels to datapoints 
+based on the question asked. A question always assigns datapoints to 
+2 labels , either a 1 or -1. We can measure the entropy of the dataset $D$ and
+the points which belong to the assigned labels , but how do we combine these 3
+values (entropy of D , entropy of points assigned to label 1 , entropy of points 
+assigned to label -1) into a singular value measure overall impurity?
+
+### Information Gain 
+Information Gain for a feature,value pair is given as,
+
+$$\begin{equation*}
+\begin{split}
+\text{Information Gain}(\text{feature,value}) &= \text{Entropy}(D) - [\gamma \text{Entropy}(D_\text{yes}) + (1- \gamma)\text{Entropy}(D_\text{no})] \\
+\\
+\text{where,}\\
+\\
+\gamma &= \frac{|D_\text{yes}|}{|D|}
+\end{split}
+\end{equation*}$$
+
+We use $\gamma$ to take into account the number of datapoints.
+A dataset $\alpha$ with 100 datapoints , from which 99 are classified as 
+label 1 and another dataset $\beta$ with 10000 datapoints , from which 9900 are
+classified as label 1 , will have the same entropy but the measure of information 
+gain will be higher for $\beta$ when compared to $\alpha$ , as the decision 
+tree trained on $\beta$ was able to classify more datapoints.
+
+## Decision Tree Algorithm
+- Discretize each feature in the [min,max] range.
+- Pick the question that has the highest information gain.
+- Repeat the procedure for $D_\text{yes}$ and $D_\text{no}$.
+
+> We can keep adding questions to the decision tree by using 
+the above procedure , but where do we stop?
+
+We stop adding new questions to the decision tree after we 
+reach a certain "threshold of purity" , this is generally 
+around 90% purity.
+
+### Example of Decision Tree 
+![](img/dec_tree_example.png)
+
+
+We classify the blue point on the right side as outlier when 
+we use cross validation method.
+If we were to keep adding more questions such that the outlier no longer 
+lies in an "incorrect" region , the purity of the decision tree may increase
+and so will the complexity.
+
+Our goal is to make small decision trees with a respectable measure of
+"purity".
+
+## Generative and Discriminative Models 
+In classical classification problems, two types of models are commonly employed:
+generative models and discriminative models.
+
+Generative models capture the joint distribution between features and labels
+and are represented as:
+
+$$P(x,y)$$
+
+These models focus on modeling the feature generation process.
+
+On the other hand, discriminative models directly model the conditional 
+probability of labels given the features and are represented as:
+
+$$P(y|x)$$
+
+Discriminative models generate labels solely based on the provided data.
+
+It is important to understand the differences between generative 
+and discriminative models when choosing an appropriate modeling approach for a given
+classification problem.
+
