@@ -87,6 +87,19 @@ To counter this we artifically introduced $\lambda$
 which increases the overall eigenvalues and hence 
 reducing the trace of the matrix , which in turn decreases MSE.
 
+### Types of Cross Validation 
+Three commonly used techniques for cross-validation are as follows:
+
+- Training-Validation Split: The training set is randomly divided into
+a training set and a validation set, typically in an 80:20 ratio. Among
+various $\lambda$ values, the one that yields the lowest error is selected.
+- K-Fold Cross Validation: The training set is partitioned into K equallysized parts. The model is trained K times, each time using K-1 parts as
+the training set and the remaining part as the validation set. The $\lambda$ value
+that leads to the lowest average error is chosen.
+- Leave-One-Out Cross Validation: The model is trained using all but
+one sample in the training set, and the left-out sample is used for validation. This process is repeated for each sample in the dataset. The optimal
+$\lambda$ is determined based on the average error across all iterations.
+
 ## Bayesian Modeling for Linear Regression 
 
 ??? question "What are conjugate priors?"
