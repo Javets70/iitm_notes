@@ -95,10 +95,18 @@ vector also in $\mathbb{R}^3$.
 
 ![](img/features_plot.png)
 
+<video width="800"  controls>
+    <source src="../videos/FeaturesLyingIn2DSpace.mp4" type="video/mp4">
+</video>
+
 **Note** that we are not plotting the the datapoints but the features themselves.
 
 Now we plot the label in the same $\mathbb{R}^3$ subspace.
 ![](img/label_plot.png)
+
+<video width="800"  controls>
+    <source src="../videos/FeaturesLyingIn2DSpace_2.mp4" type="video/mp4">
+</video>
 
 We can see that the linear combinations of the features (green vectors)
 will lie in the same plane as the features themselves.
@@ -111,6 +119,10 @@ In the case it does not lie in the plane spanned by the features , we will find 
 of $y$ onto the plane.
 
 ![](img/label_projection.png)
+
+<video width="800"  controls>
+    <source src="../videos/ProjectionOfLabel.mp4" type="video/mp4">
+</video>
 
 We also know that the red point will also be a linear combination of the features 
 as it lies in the same plane as of the features themselves.
