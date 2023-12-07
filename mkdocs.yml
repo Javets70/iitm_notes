@@ -115,6 +115,8 @@ nav:
         - Classification: "MLT/WEEK 7/Classification.md"
       - Week 8:
         - Types of Models: "MLT/WEEK 8/Models.md"
+      - Week 9:
+        - Perceptron  Learning Algorithm: "MLT/WEEK 9/Perceptron Learning Algorithm.md"
 
     - Business Data Management:
       - Week 1: "BDM/WEEK 1/Consumption.md"
