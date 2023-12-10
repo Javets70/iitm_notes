@@ -240,10 +240,18 @@ It can also be seen as $w^*$ lying in a $\mathbb{R}^3$ subspace spanned by the d
 
 ![](img/kernel_reg_datapoints.png)
 
+<video width="800"  controls>
+    <source src="../videos/SpaceSpannedByDatapoints.mp4" type="video/mp4">
+</video>
+
 Lets say that there are some data points in $\mathbb{R}^3$ , even though they are 3-dimensional 
 vectors , lets assume that they all line in some 2-d plane (in our case its the green area above)
 
 ![](img/w_star.png)
+
+<video width="800"  controls>
+    <source src="../videos/SpaceSpannedByDatapoints_2.mp4" type="video/mp4">
+</video>
 
 For arguments sake , lets assume that our $w^*$ lies outside the (green) plane. To minimize 
 the error we will now take a point which is closest to $w^*$ which lies on the same (green) plane.
