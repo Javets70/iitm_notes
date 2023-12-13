@@ -33,6 +33,7 @@ $$\begin{equation*}
 
 ![](img/linear_loss.png)
 
+
 > The above problem is an NP-Hard Problem in general.
 In regression we used to take the gradient , set it to zero and find 
 the $w$, that doesnt apply here because the loss here can only take 2 
@@ -49,6 +50,11 @@ At the end we use this $w$ to get $h_w$ by solving for $w^Tx =0$ ($h_w : \mathbb
 > Is this a good idea? Does this help us?
 
 ![](img/datapoint_loss_func.png)
+
+<video width="800"  controls>
+    <source src="../videos/LinearLoss.mp4" type="video/mp4">
+</video>
+
 
 Now if we add more positive label datapoints ,
 ![](img/skewed_loss_func.png)

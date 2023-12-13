@@ -117,6 +117,8 @@ nav:
         - Types of Models: "MLT/WEEK 8/Models.md"
       - Week 9:
         - Perceptron  Learning Algorithm: "MLT/WEEK 9/Perceptron Learning Algorithm.md"
+      - Week 10:
+        - Support Vector Machine: "MLT/WEEK 10/SVM.md"
 
     - Business Data Management:
       - Week 1: "BDM/WEEK 1/Consumption.md"
@@ -155,6 +157,7 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
   - md_in_html
+
 
 extra_javascript:
   - javascripts/mathjax.js
