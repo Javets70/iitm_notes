@@ -59,6 +59,10 @@ At the end we use this $w$ to get $h_w$ by solving for $w^Tx =0$ ($h_w : \mathbb
 Now if we add more positive label datapoints ,
 ![](img/skewed_loss_func.png)
 
+<video width="800" style="filter: none;" controls>
+    <source src="../videos/LinearLoss_2.mp4" type="video/mp4">
+</video>
+
 We can see that the $w$ gets skewed which in turn changes $h_w$.
 The above algorithm depends on a linear regression model which solves for $w$
 by taking into account all the datapoints.
