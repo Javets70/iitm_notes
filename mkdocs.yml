@@ -119,6 +119,8 @@ nav:
         - Perceptron  Learning Algorithm: "MLT/WEEK 9/Perceptron Learning Algorithm.md"
       - Week 10:
         - Support Vector Machine: "MLT/WEEK 10/SVM.md"
+      - Week 11:
+        - Support Vector Machine : "MLT/WEEK 11/SVM2.md"
 
     - Business Data Management:
       - Week 1: "BDM/WEEK 1/Consumption.md"

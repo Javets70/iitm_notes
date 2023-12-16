@@ -79,7 +79,7 @@ of the "size" then approximating the outlier to the "line" with least lost would
 To represent outliers and reduce the size of the dataset at the same time , we must project the 
 outlier onto the line.
 
-![Projection of Outlier ](img/Projection.png)
+![Projection of Outlier ](./img/Projection.svg)
 
 Let there be a vector $\begin{bmatrix} w_1 \\ w_2 \end{bmatrix}$ which represents the "line".
 The projection of the vector $\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}$ onto the line would be 
@@ -263,7 +263,7 @@ w_1^TCw_1 &= w_1^T(\lambda_1w_1) = \lambda_1 \\
     For an arbitrary set of points $(\{(x_1^Tw) , (x_2^Tw) ...... (x_n^T)w   \})$
     projected onto line represented by vector $w$.
 
-    ![](img/variance_is_lambda.png)
+    ![](img/VarianceIsLambda.svg)
 
     The average $\mu$ of the projected points will be $\frac{1}{n}\sum_{i=1}^{n}(x_i^Tw)$.
     If the data is centered then,

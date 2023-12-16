@@ -226,7 +226,7 @@ For a dataset $D = \{ (x_1 , y_1), (x_2 , y_2), ... (x_n , y_n) \}$ , an
 $$\begin{equation*}
 \begin{split}
 \text{Entropy}(y_1 , y_2 , ... y_n) &= \text{Entropy}(p) \\
-&= - (p \log p + (1-p) \log (1-p) ) \;\;\;\;\;\;\;\; [\text{convention} \;\; \log 0 = 0]
+&= - (p \log_2 p + (1-p) \log_2 (1-p) ) \;\;\;\;\;\;\;\; [\text{convention} \;\; \log_2 0 = 0]
 \end{split}
 \end{equation*}$$
 
