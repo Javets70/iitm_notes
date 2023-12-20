@@ -231,6 +231,9 @@ $$\begin{equation*}
 \end{equation*}$$
 
 ![](img/entropy_function.png)
+<video width="800"  controls>
+    <source src="../videos/EntropyFunction.mp4" type="video/mp4">
+</video>
 
 - When $p=0$ or $p=1$ , it means that all of the datapoints 
 are classified to a single label.

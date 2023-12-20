@@ -3,7 +3,7 @@
 We know that in the Perceptron Algorithm the number of mistakes is given by,
 $\text{#mistakes} \leq \frac{R^2}{\gamma^2}$ , we also said that data is linearly 
 separable with margin $\gamma$ , which means that there exists some $w^*$ such that 
-$w^{*^T} x_i \geq \gamma \forall i , \gamma>0$ 
+$w^{*^T} x_i \geq \gamma \quad \forall i , \gamma>0$ 
 
 ![](./img/QualityFinalSolution.svg)
 
@@ -30,7 +30,7 @@ $$\label{max-margin-formulation} \tag{1}
 \text{such that } (w^T x_i)y_i \geq \gamma \;\; \forall i$$
 
 > We want to maximize $\gamma$ over $w$ , but we arent choosing any random $w$ ,
-the $w$ should satisfy the condition of $(w^Tx x_i)y_i \geq \gamma$.
+the $w$ should satisfy the condition of $(w^T x_i)y_i \geq \gamma$.
 
 !!! failure "Problem With Above Formulation"
     Lets say for some $w$ the $\gamma$ margin is , $\{ x:w^T x = 5 \}$ , it can 
@@ -61,9 +61,10 @@ $$\label{abcd} \tag{1} \begin{split}
 \end{split}$$
 
 
-> This equation basically means that , we are allowing any $w$ which linearly 
-separates our dataset with $\gamma$ margin exactly equals 1 and instead of 
-maximizing $\gamma$ we are maximizing is the width. The width here is 
+> The equation here basically means that , we are allowing any $w$ which linearly 
+separates our dataset with $\gamma$ margin and the norm square 
+of that $w$ must be 1 and instead of 
+maximizing $\gamma$, we are maximizing the width. The width here is 
 the distance between to parallel lines of $\gamma$ margins.
 
 !!! question "What is width(w)?"

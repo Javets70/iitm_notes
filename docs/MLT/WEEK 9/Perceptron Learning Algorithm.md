@@ -18,10 +18,10 @@ P(y=1|x) =
 discriminative model we only care about how $y|x$ is generated.
 
 ### Linear Separatability Assumption 
-From our above linear model to classify datapoints , either they 
-will have the label 1 or label -1. This means there should be no 
-outliers in a dataset and all the points belong to either side of 
-$w^Tx = 0$ (Linear Separator).
+For our above linear model to be able to classify datapoints , 
+the datapoints must have either label 1 or label -1. 
+This means there should be no  outliers in a dataset and all 
+the points should belong to either side of $w^Tx = 0$ (Linear Separator).
 
 
 <figure markdown>
@@ -96,20 +96,18 @@ doesnt predict the datapoint correctly then we multiply the datapoint with its l
 
 Also note that the **update rule** here is the boxed equation,
 
-$$ w^{t+1} = w^t + x_i y_i $$
+$$ \boxed{w^{t+1} = w^t + x_i y_i} $$
 
 ## Understanding Perceptron Update Rule
 In our current perceptron algorithm , two types of mistakes can happen
 
-**Mistake Type 1**
+!!! failure "Mistake Type 1"
+    - Predicted Label = +1 (sign $(w^Tx_i) \geq 0$)
+    - Actual Label = -1 ($y_i$ = -1)
 
-- Predicted Label = +1 (sign $(w^Tx_i) \geq 0$)
-- Actual Label = -1 ($y_i$ = -1)
-
-**Mistake Type 2**
-
-- Predicted Label = -1 (sign $(w^Tx_i) < 0$)
-- Actual Label = +1 ($y_i$ = -1)
+!!! failure "Mistake Type 2"
+    - Predicted Label = -1 (sign $(w^Tx_i) < 0$)
+    - Actual Label = +1 ($y_i$ = +1)
 
 >When we encounter a mistake , we either make a mistake in prediction 
 of Type 1 Category or Type 2 Category and then we update $w$ accordingly.
@@ -134,10 +132,10 @@ w^{t+1} &= w^t + x_i y_i \\
 
 $$ (w^{t+1})^T x_i = \underbrace{w^{t^T} x_i}_{\geq 0} + \underbrace{\underbrace{y_i}_{-1} \underbrace{||x_i||^2}_{\geq 0}}_{\text{Negative}}$$
 
-Here $y_i = -1$ represents the "actual" label of $x_i$ and $||x_i||^2$ 
-will always be positive because it is squared.
+Here $y_i = -1$ represents the "actual" label of $x_i$,
 
-The product of $y_i$ and $||x_i||^2$ will be less than zero (negative).
+- $||x_i||^2$ will always be positive because it is squared.
+- The product of $y_i$ and $||x_i||^2$ will be less than zero (negative).
 
 > Now what does all this mean?
 
@@ -145,25 +143,27 @@ In a Type 1 Mistake , we predicted the label to be positive (+1) because our
 $w^T x_i \geq 0$ , but it should have been negative (as the actual label is -1).
 We can see that the product of $y_i$ and $||x_i||^2$ will be negative and will 
 get subtracted from $w^{t^T} x_i$ which will shift the $w$ towards the negative 
-direction. This doesnt mean that $w$ will immediately give a negative dot product
+direction. 
+
+This doesnt mean that $w$ will immediately give a negative dot product
 just after this iteration (where we made the Type 1 Mistake) but **it does moves/shifts 
 the $w$ to the correct direction.**
 
 **Conclusion** : Update rule pushes $w$ in the right direction.
 
 > The update of $w$ we discussed fixes the prediction for the "current" datapoint,
-but does does it affect the prediction of previous datapoints (which predicted 
+but does it affect the prediction of previous datapoints (which was predicted 
 correctly )? In on overall sense , does our current algorithm give use the best $w$?
 
 ### Redifining Linear Separatability
-#### Case 1
-![](./img/Updating_w.svg)
+!!! info "Case 1"
+    ![](./img/Updating_w.svg)
 
-Here we can see that updating $w$ for a point $x$ leads to misclassification of 
-some datapoints which were correctly classified before.
+    Here we can see that updating $w$ for a point $x$ leads to misclassification of 
+    some datapoints which were correctly classified before.
 
-#### Case 2
-![](./img/Updating_w_2.png)
+!!! info "Case 2"
+    ![](./img/Updating_w_2.png)
 
 > Is this data linearly separable?
 

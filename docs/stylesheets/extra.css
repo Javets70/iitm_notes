@@ -23,3 +23,9 @@
 
   /* Return to white */
 }
+
+/* Increase Tex Font in Admonition*/
+
+.admonition {
+  font-size: 90% !important
+}
