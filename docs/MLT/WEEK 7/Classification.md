@@ -125,6 +125,14 @@ as those extreme right red points are outliers.
 
 > Now we know that taking $k=1$ is a bad idea. ;C
 
+!!! info "Animation"
+	<video width="800" style="filter: none;" controls>
+    	<source src="../videos/KNN (k=1).mp4" type="video/mp4">
+	</video>
+	
+	The nearest datapoint to $x_\text{test}$ (White Dot) is 
+	the Positively Labelled (Red) Dot.
+
 #### Case 2 (k=n)
 Now lets look at the case when $k=n$
 
@@ -145,12 +153,29 @@ our answer will always be negative (blue) label.
     - Asking too few ($k=1$) neighbours gives us an outlier issue.
     - Asking too many ($k=n$) neighbours gives us the "majority label".
 
+!!! info "Animation"
+	<video width="800" style="filter: none;" controls>
+    	<source src="../videos/KNN (k=n).mp4" type="video/mp4">
+	</video>
+	
+	The Majority Label in the dataset is +1 (Red Dot)
+	hence, $x_\text{test}$ (White Dot) is Positively Labelled.
+
 > What to do then?
 
 We must find such a $k^*$ that it ignores the outliers and yet it maintains 
 a resonable decision boundry.
 
 ![](img/dec_boundry_k_star.png)
+
+!!! info "Animation"
+	<video width="800" style="filter: none;" controls>
+    	<source src="../videos/KNN (k=k*).mp4" type="video/mp4">
+	</video>
+	
+	- Here we took k=15.
+	- It can be seen that $x_\text{test}$ (White Dot) lies 
+	near a cluster of Positively Labelled (Red) Dots. 
 
 > How do find the right number of neighbours ($k^*$)?
 
