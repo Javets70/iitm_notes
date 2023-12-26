@@ -161,6 +161,15 @@ correctly )? In on overall sense , does our current algorithm give use the best 
 
     Here we can see that updating $w$ for a point $x$ leads to misclassification of 
     some datapoints which were correctly classified before.
+    
+    !!! info "Animation"
+		<video width="800" style="filter: none;" controls>
+	    	<source src="../videos/PerceptronAlgorithm.mp4" type="video/mp4">
+		</video>
+		
+		- It can be seen that at the end when the new weight vector (yellow)
+		is created , it misclassifies the circled points , which were correctly
+		classified by the old weight vector (white).
 
 !!! info "Case 2"
     ![](./img/Updating_w_2.png)
