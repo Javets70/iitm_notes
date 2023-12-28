@@ -173,7 +173,7 @@ a resonable decision boundry.
     	<source src="../videos/KNN (k=k*).mp4" type="video/mp4">
 	</video>
 	
-	- Here we took k=15.
+	- Here we took k=25.
 	- It can be seen that $x_\text{test}$ (White Dot) lies 
 	near a cluster of Positively Labelled (Red) Dots. 
 

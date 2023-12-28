@@ -226,7 +226,20 @@ Now lets see how the perceptron algorithm work on this dataset.
     and the algorithm will never converge.
 
 **In such an edge case , there exists no $w$ which will correctly classify all 
-the datapoints , even though , at first the dataset my look linearly separable**
+the datapoints , even though , at first the dataset may look linearly separable**
+
+!!! info "Animation"
+	<video width="800" style="filter: none;" controls>
+    	<source src="../videos/PerceptronAlgorithm2.mp4" type="video/mp4">
+	</video>
+	
+	- In each iteration the incorrectly predicted point is highlighted 
+	in yellow color.
+	- Points on the right side of the Decision Boundry are predicted as +1 (positive),
+	while points on the left side are predicted as -1 (negative)
+	- Even after several iterations it can be seen that the weight vector keeps going
+	back and forth between `w=[1,0.5]` and `w=[1,-0.5]`.
+	- Hence we can see that the algorithm will never converge.
 
 > Why does this happen?
 
