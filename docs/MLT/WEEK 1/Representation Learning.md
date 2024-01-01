@@ -1,5 +1,6 @@
-# Representation Learning 
+# Principal Component Analysis (PCA)
 
+## Introduction
 Unsupervised learning, specifically "representation learning," is a subset of 
 machine learning where the goal is to automatically discover meaningful representations
 or features from raw data without explicit supervision or labeled examples. 
@@ -8,7 +9,7 @@ patterns, or features within the data itself.
 This can be highly valuable for various tasks like data compression, feature extraction, 
 data visualization, and even for improving the performance of other machine learning models.
 
-## Objective
+## Representation Learning (1)
 The main objective of representation learning is to transform 
 the input data into a more meaningful and **compact** representation.
 This representation should capture the essential characteristics 
@@ -94,7 +95,7 @@ the above equation becomes
 
 $$ \left[ {x_1w_1 + x_2w_2} \right] \begin{bmatrix} w_1 \\ w_2 \end{bmatrix} $$
 
-### Picking the "Line"
+## Representation Learning (2)
 Our original objective was to find a "compressed" representation of the data 
 when all the data-points not necessarily fall on the same line.
 
@@ -159,8 +160,11 @@ where "*loss*" is the average of all the "*errors*" when projecting outliers ont
     would be the eigenvector corresponding to the largest eignevalue of $C$.**
 
 ### Error Vector has Information 
+
+![](./img/ErrorVector.svg)
+
 Our hypothesis was that there is a line which best represents the data but , if all the 
-data points lied along a plane then this part which we are imagining to be error may not be 
+data points lied along a plane then this part (dotted orange lines) which we are imagining to be error may not be 
 the error but rather useful information because the necessary information , the structure
 is in a plane but not on a line , so the bits we lose while selecting the best line will
 also contain some information.
@@ -178,7 +182,9 @@ also contain some information.
         To counter that we can subtract the average of the dataset 
         from the points.
 
-### Best "Line" of Error Vectors 
+## Principal Component Analysis (1)
+![](./img/ErrorVector2.svg)
+
 From the algorithm above we can find a $w_2$ vector which represents the line
 which passes through the "error/residues" generated while finding out $w_1$.
 
@@ -228,14 +234,36 @@ Hence , we get a set of Orthonormal Vectors.
     **This leads to the conclusion that if data lives in a "low" dimensional linear sub-space,
     then residue becomes 0 much earlier than $d$ rounds.**
 
+    !!! question "What does the above statement actually mean?"
+        Lets say for a dataset $\{x_1 , x_2 \cdots , x_n \}$ , where $x_i \in \mathbb{R}^d$ , 
+        all the residues/error vectors become 0 after 3 rounds.
+
+        This means that every datapoint can be expressed as the sum of projections itself onto
+        the residues/error vectors.
+
+        $$ \forall i \;\; x_i = (x_i^Tw_1)w_1 + (x_i^Tw_2)w_2 + (x_i^Tw_3)w_3 $$
+
+        where $\{w_1 ,w_2 ,w_3 \} \in \mathbb{R}^d$
+
+        **Note** that the $\{w_1 ,w_2 ,w_3 \}$ are the representatives and 
+        $\{x_i^T w_1 , x_i^T w_2 , x_i^T w_3 \}$ are the coefficients for a datapoint $x_i$
+        
     !!! example
         Lets assume for a dataset of dimension $d$ and $n$ points , after $k$ rounds the 
         error vectors become zero vectors.
         
-        This means that now the dataset can be represented with $\mathbf{d \times k + d \times n}$
+        This means that now the dataset can be represented with $\mathbf{d \times k + k \times n}$
         points instead of $d \times n$ points.
 
-### Linear Algebra Perspective of the "Algorithm"
+        > In the case shown above where the residues/error vectors become 0 after $k = 3$ rounds,
+        we can represent the whole dataset as,
+        $d \times 3$  +  $3 \times n$
+
+        > Where , $d \times 3$ = Total numbers required to store the representatives
+
+        > $3 \times n$ = Total numbers required to store datapoints
+
+## Principal Component Analysis (2)
 Our original problem was 
 
 $$ \max_{w_{||w||^2 = 1}} w^TCw $$
@@ -254,26 +282,36 @@ $$\begin{equation*}
 \begin{split}
 Cw_1 &= \lambda_1 w_1 \\ 
 w_1^TCw_1 &= w_1^T(\lambda_1w_1) = \lambda_1 \\
-\lambda_1 &= w_1^TCw_1 = w_1^T(\frac{1}{n}\sum_{i=1}^{n}x_ix_i^T)w_1
+\lambda_1 &= w_1^TCw_1 = w_1^T(\frac{1}{n}\sum_{i=1}^{n}x_ix_i^T)w_1 \\
 \lambda_1 &= \frac{1}{n}\sum_{i=1}^{n}(x_i^Tw_1)^2
 \end{split}
 \end{equation*}$$
 
-!!! note "Relation between Variance and $\mathbf{\lambda}$"
-    For an arbitrary set of points $(\{(x_1^Tw) , (x_2^Tw) ...... (x_n^T)w   \})$
-    projected onto line represented by vector $w$.
+Usually we take highest $L$ lambdas such that 95% of the variance in the dataset
+is captured,
 
-    ![](img/VarianceIsLambda.svg)
+$$\frac{\sum_{i=1}^L \lambda_i }{ \sum_{i=1}^d \lambda_i } \geq 0.95$$
 
-    The average $\mu$ of the projected points will be $\frac{1}{n}\sum_{i=1}^{n}(x_i^Tw)$.
-    If the data is centered then,
+where , $\lambda_i$ are the eigenvalues of the covariance matrix .
 
-    $$\frac{1}{n}\sum_{i=1}^{n}(x_i^Tw) = (\frac{1}{n}\sum_{i=1}^{n}x_i)w = 0w = 0$$
+### Relation between Variance and $\mathbf{\lambda}$
+For an arbitrary set of points $(\{(x_1^Tw) , (x_2^Tw) ...... (x_n^T)w   \})$
+projected onto line represented by vector $w$.
 
-    This implies that average for a centered dataset is $\mu = 0$.
+![](img/VarianceIsLambda.svg)
 
-    The variance of this same dataset will be ,
+The average $\mu$ of the projected points will be $\frac{1}{n}\sum_{i=1}^{n}(x_i^Tw)$.
+If the data is centered then,
 
-    $$\frac{1}{n}\sum_{i=1}{n}(x_i^Tw - \mu)^2 = \frac{1}{n}\sum_{i=1}^{n}(x_i^Tw)^2$$
+$$\frac{1}{n}\sum_{i=1}^{n}(x_i^Tw) = (\frac{1}{n}\sum_{i=1}^{n}x_i)w = 0w = 0$$
 
-    We can see that the variance is same as $\lambda$ required to solve the maximization problem.
+This implies that average for a centered dataset is $\mu = 0$.
+
+The variance of this same dataset will be ,
+
+$$\frac{1}{n}\sum_{i=1}^{n}(x_i^Tw - \mu)^2 = \frac{1}{n}\sum_{i=1}^{n}(x_i^Tw)^2$$
+
+We can see that the variance is same as $\lambda$ required to solve the maximization problem.
+
+**Hence we can say that , variance maximization is the same as error minimization on 
+centered dataset**

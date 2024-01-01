@@ -16,7 +16,7 @@ of points.
 features are not related linearly then using PCA does not give good 
 results.
 
-## Solving Time Complexity Issue
+## Time Complexity Issue with PCA
 The time complexity issue occurs when the number of features is 
 much much greater than the number of points in the dataset , i.e. 
 $d >> n$.
@@ -41,16 +41,23 @@ C w_k &= \lambda_k w_k \\
 w_k &= \frac{1}{n \lambda_k} \sum_{i=1}^{n} (x_i^Tw_k)x_i \\
 w_k &= \sum_{i=1}^{n} \left( \frac{x_i^Tw_k }{n \lambda_k} \right)x_i \\
 \end{split}
-\end{equation*}$$
+\end{equation*} \tag{1} \label{Wk1}$$
 
-From this equation we can obeserve that $w_k$ is a linear combination of datapoints,
+From this equation we can obeserve that **$\mathbf{w_k}$ is a linear combination of datapoints**,
 assuming $\lambda_k \neq 0$.
 
-$$\implies w_k = X\alpha_k$$ 
+$$\implies w_k = X\alpha_k \tag{2} \label{Wk2}$$ 
 
 for some $\alpha_k \in \mathbb{R}^n$
 
-> Now we need to find $\alpha_k$ to get $w_k$ , strange ik :C
+> To find the value $w_k$ from the above equation , we need to know the value of $\alpha_k$
+
+> But if we compare $\eqref{Wk1}$ and $\eqref{Wk2}$ we can see that , 
+$\alpha_k = \sum_{i=1}^{n} \left( \frac{x_i^Tw_k }{n \lambda_k} \right)$
+
+> From the above equation , if we want to find $\alpha_k$ we need to know the 
+value $w_k$ itself. This is a chicken and egg problem,to solve this problem
+we will take a look at another equation.
 
 We know,
 
@@ -74,10 +81,10 @@ K^2 \alpha_k &= n \lambda_k K \alpha_k \\
 \end{equation*}$$
 
 > It is observed that for any $\alpha_k$ lets say $u$ which satisfies 
-this equation , there exists a scaled version $u$ (Example $4u$) which 
+this equation , there exists a scaled version of $u$ (Example $4u$) which 
 also satisfies this equation.
 
-> To prevent the possibilities of scaled values of $alpha_k$ , we will 
+> To prevent the possibilities of scaled values of $\alpha_k$ , we will 
 narrow down the possible values using the idea that length of $w_k$ is 1 i.e.
 $||w_k|| = 1$.
 
@@ -153,23 +160,31 @@ The gist of this solution is that , when  $d >> n$  we use the eigenvectors of
 $X^TX \in \mathbb{R}^{n \times n}$ instead of $XX^T \in \mathbb{R}^{d \times d}$
 which reduces the computation time required to get the eigenvectors.
 
+
+!!! success "New Algorithm when $d >> n$"
+    1. Compute $K = X^TX$ , where  $K \in \mathbb{R}^{n \times n}$
+    2. Compute the eigendecomposition of $K$ to get the eigenvectors and the 
+    eigenvalues.
+    3. Calculate for $\alpha_k$ , $\alpha_k = \frac{\beta_k}{\sqrt{n \lambda_k}} \;\;\;\;\; \forall k$
+    4. $\boxed{w_k = X\alpha_k} \;\;\;\;\;\; \forall k$
+
 ## Non-Linear Relationship of Datapoints 
 The issue of non-linear relationship arises when the datapoints 
 are related to each other in a "non-linear" way , it might be quadratic , cubic or 
 even biquadratic.
 
-![circle_points](img/circle_points.png)
+![](./img/MultipleBestFitLines.svg)
 
 Now if the points of the dataset lie in a circle , determining the "best fit line"
 is pointless , almost all of the lines will be the best fit lines for this circle with
 a marginal difference of "reconstruction error" between them.
 
-The features of each in this dataset is can be represented using the equation of circle,
+The relation features of in this dataset can be represented using equation of a circle,
 
 $$(f_1 - a)^2 + (f_2 - b)^2 = r^2$$
 
 > We can see that this equation has quadratic terms which cannot be 
-represented linearly. To solve this problem we will map it to function
+represented linearly. To solve this problem , we will map it to function
 with more features in order to represent it linearly.
 
 $$\begin{equation*}
@@ -185,3 +200,120 @@ is a point such that each datapoint of the original circular dataset satisfies,
 
 $$\boxed{\phi(x)^Tw = 0}$$
 
+The equation above shows that the datapoints after mapping to $\mathbb{R}^6$
+lie in a linear subspace.
+
+!!! note 
+    Mapping $d$ features to a polynomial of power $p$ results in $^{d+p} C_d$ new features.
+
+    In the above equation of circle , it can be see in that mapping 2 features ($d$) 
+    to a polynomial of degree 2 ($p$), results in ($^{2+2} C_2$) 6 features.
+
+!!! question "How does this solve our problem of non linear datapoints?"
+    For a dataset $S$ , whose datapoints have a non-linear relationship ($x_i \in \mathbb{R}^d$),
+    we can map this dataset to a higher dimension (linear subspace), 
+    such that after mapping , $x_i \in \mathbb{R}^D$.
+
+    **Note** that $D > d$
+
+    As the points (after mapping to higher dimension) are in a linear subspace , our PCA algorithm 
+    will work much better than before.
+
+    Also note that , we already have a solution for the case when dimension of the datapoints is much 
+    much larger than the number of datapoints ($d >> n$). 
+
+## Kernel Functions 
+
+!!! failure "Issues with Calculating $\phi(x)$"
+    - To run PCA on non-linear features , we came up with the solution of mapping ($\phi(x)$) the 
+    features to a higher dimension and then instead of calculating eigenvectors for a $d \times d$ 
+    (Covariance) matrix , we calculated eigenvectors for $n \times n$ ($X^TX$) if $d >> n$.
+    - The issue with current implementation of PCA is that calculating $\phi(x)$ is nearly 
+    the same number of calculations as $O(d^p)$. 
+        - This means that as the power of the polynomial increases , the calculation of individual 
+        features in the mapping $\phi(x)$ rises exponentially.
+        - **Example**: If 2 features are mapped to a 20 power polynomial , the resulting number of 
+        features will be nearly $2^{20}$ , which is simply too many calculations.
+    - To solve this problem we will now take a look at Kernel Functions.
+
+The eigendirections we compute (when mapping datapoints to a higher dimension) in PCA is of $\phi(x)^T \phi(x)$.
+
+![](./img/KernelFunctions.svg)
+
+> To get to $K_{ij}$ we first need to calculate $\phi(x_i)^T \phi(x_j)$ , but is there a way to directly go from 
+$x_i \quad x_j$ to $K_{ij}$ without computing $\phi(x)$ ?
+
+The function $(x^T x^{'} + 1)^2$ is one such function through which we can directly get to  $\phi(x)^T \phi(x^{'})$, 
+without having to compute $\phi(x)$ and $\phi(x^{'})$.
+
+Lets say, $x = [f_1 , f_2] \quad x^{'} = [g_1 , g_2]$
+
+$$\begin{equation*}
+\begin{split}
+(x^T x^{'} + 1)^2 &= \left( \begin{bmatrix}f_1 & f_2 \end{bmatrix} \begin{bmatrix} g_1 \\ g_2 \end{bmatrix} + 1 \right)^2 \\
+&= (f_1 g_1 + f_2 g_2 + 1)^2 \\ 
+&= f_1^2 g_1^2 + f_2^2 g_2^2 + 1 + 2f_1 g_1 f_2 g_2 + 2f_1 g_1 + 2f_2 g_2 \\
+\end{split}
+\end{equation*}$$
+
+This can also be written as ,
+
+$$\begin{equation*}
+\begin{split}
+(x^T x^{'} + 1)^2 &= \begin{bmatrix}f_1^2 & f_2^2 & 1 & \sqrt{2}f_1 f_2 & \sqrt{2}f_1 & \sqrt{2}f_2 \end{bmatrix} 
+\begin{bmatrix}g_1^2 \\ g_2^2 \\ 1 \\ \sqrt{2}g_1 g_2 \\ \sqrt{2}g_1 \\ \sqrt{2}g_2 \end{bmatrix} \\
+&= \phi(x)^T \phi(x^{'}) \\
+\\
+\text{where,}\\
+\\
+\phi(x) &= \phi \left( \begin{bmatrix} a \\ b \end{bmatrix}\right) = \begin{bmatrix}a^2 \\ b^2 \\ 1 \\ \sqrt{2}a b \\ \sqrt{2}a \\ \sqrt{2}b \end{bmatrix} \\\end{split}
+\end{equation*}$$
+
+We can see that , to calculate $\phi(x)^T \phi(x^{'})$ we can instead solve for $(x^T x^{'} + 1)^2$ and 
+skip the step for calculating $\phi(x)$ and $\phi(x^{'})$.
+
+### Valid Kernel Functions
+There are 2 ways to check if a function is a valid kernel function,
+
+1. There exists a mapping from $\mathbb{R}^d$ to $\mathbb{R}$ such that $k(x , x^{'}) = \phi(x)^T \phi(x^{'})$.
+2. A kernel function is considered valid if ,
+    - $k$ is symmetric , i.e. , $k(x , x^{'}) = k(x^{'} , x)$
+    - The kernel matrix $K$ , where $K_{ij} = k(x_i , x_j)$ , is positive semi-definite.
+
+!!! note "Common Kernel Functions"
+    1. **Polynomial Kernel**: $k(x , x^{'}) = (x^Tx^{'} + 1)^p$
+    2. **Gaussian Kernel**: $k(x , x^{'}) = \exp \left( - \frac{|| x - x^{'}||^2}{2 \sigma^2} \right)$ , for some $\sigma > 0$.
+        - $\phi(x)$ in this case is mapped to infinite dimension.
+
+## Kenrel PCA
+Now we need everything that is required to perform Kernel PCA on a non-linear dataset , lets put down an 
+algorithm for Kernel PCA.
+
+- Input $\{x_1 , x_2 , \cdots , x_n \}$ $x_i \in \mathbb{R}^d$ , kernel $k : \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}$
+- Compute $K \in \mathbb{R}^{n \times n}$ where $K_{ij} = k(x_i,x_j) \quad \forall i,j$
+- Center the kernel using,
+
+$$K^C = K - IK - KI + IKI$$
+
+where $K^C$ is the centered kernel and $I \in \mathbb{R}^{n \times n}$ is a matrix with all elements equal to $\frac{1}{n}$
+
+- Compute $\beta_1 , \beta_2 , \cdots , \beta_l$ eigenvectors and $n\lambda_1 , n\lambda_2 , \cdots , n\lambda_l$ eigenvectors of K
+and normalize to get $\alpha_k = \frac{\beta_k}{\sqrt{n \lambda_k}}$
+- Compute the compressed representation using,
+
+$$\begin{equation*}
+\begin{split}
+\phi(x_i)^T w_k &= \phi(x_j)^T \left( \sum_{j=1}^n \phi(x_i) \alpha_{kj} \right) \\
+&= \sum_{j=1}^n \alpha_{kj} \phi(x_i)^T \phi(x_j) \\
+&= \sum_{j=1}^n \alpha_{kj} K_{ij} \\
+\end{split}
+\end{equation*}$$
+
+- Compute $\sum_{j=1}^n \alpha_{kj} K_{ij} \quad \forall k$
+
+$$\phi(\mathbf{x}_i)^T\mathbf{w} \in \mathbb{R}^{d} \to
+\left [
+\begin{array}{cccc}
+\displaystyle \sum_{j=1}^{n} \alpha_{1j} \mathbf{K}^C_{ij} & \displaystyle \sum_{j=1}^{n} \alpha_{2j} \mathbf{K}^C_{ij} & \ldots & \displaystyle \sum_{j=1}^{n} \alpha_{nj} \mathbf{K}^C_{ij}
+\end{array}
+\right ]$$
