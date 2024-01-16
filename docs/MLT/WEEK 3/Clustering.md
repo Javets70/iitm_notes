@@ -70,15 +70,9 @@ are made.
     usally produces reasonable clusters.
 
 !!! info "Animation"
-    <video width="800"  controls>
-        <source src="../videos/KMeansClustering.mp4" type="video/mp4">
-    </video>
+    <iframe width="800" height="400"  src="https://www.youtube.com/embed/2lZZ_FzlIJY" allowfullscreen></iframe>
 
-    - At first the datapoints are randomly assigned to a cluster.
-    - The large circles show the cluster centers and are updated at each iteration.
-    - If a point is flashed it means that the point is assigned to a new cluster.
-    - Similarly , if a point is not flashed then that means , the point is closer to the cluster 
-    its currently assigned to.
+    **This video was made by <a href="https://jacobbumgarner.github.io/" target="_blank">Jacob Bumgarner</a>**
 
 > But what if the algorithm never actually converges?
 
@@ -230,10 +224,14 @@ $$ S(x) = \underset{j=1,2,.... l-1}{\min} {||x - \mu_j^0||}^2 $$
 
 - The scores generated this way wont lie in the range of 0 to 1,
 to use these scores probabilistically we will normalize them by dividing the scores
-with the maximum value possible.
+with the sum of all the distances from that cluster.
 
 - After selecting the $k$ means , we continue with K-Means Algorithm.
 
+!!! info "Animation"
+    <iframe width="800" height="400"  src="https://www.youtube.com/embed/4qJWhvFQb9g" allowfullscreen></iframe>
+
+    **This video was made by <a href="https://jacobbumgarner.github.io/" target="_blank">Jacob Bumgarner</a>**
 ## Choice of K
 According to our original objective function,  
 $$ F(z_1 , z_2 , z_3 , .... z_n ) = \sum_{i=1}^{n} ||x_i - u_{z_i}||_2^2 $$
