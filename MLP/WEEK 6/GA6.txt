@@ -1,0 +1,20 @@
+For some reason I was not able to 
+take screenshot of GA6
+
+Here are the answers
+
+Q1)Which of the following is a pair that gives the number of training samples for digit 5 and digit 3? [(863,1032)]
+
+Q2) Obtain confusion matrix for the test samples and the predicted samples. How many True Positives are there? [173]
+
+Q3) From the confusion matrix, answer how many True Negatives are there? [190]
+
+Q4) From the confusion matrix, answer how many False Negatives are there? [12]
+
+Q5) From the confusion matrix, answer how many False Positives are there? [6]
+
+Q6) In the same model setup just change the shuffle parameter to False, refit the classifier on training data, make predictions on test data and observe the accuracy, precision score and recall score. Which of the following statements are True based on your observations? [
+The recall score value decreased after setting shuffle = False.
+The precision score value increased after setting shuffle = False.
+The accuracy value decreased after setting shuffle = False.
+]

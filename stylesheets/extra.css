@@ -1,0 +1,31 @@
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #0f0f0f;
+}
+
+.arithmatex :target {
+  animation: pulse-red 3s linear;
+}
+
+@keyframes pulse-red {
+  0% {
+    background-color: #fff;
+  }
+
+  /* Start at white */
+  50% {
+    background-color: #f00;
+  }
+
+  /* Peak at red halfway */
+  100% {
+    background-color: #fff;
+  }
+
+  /* Return to white */
+}
+
+/* Increase Tex Font in Admonition*/
+
+.admonition {
+  font-size: 90% !important
+}
