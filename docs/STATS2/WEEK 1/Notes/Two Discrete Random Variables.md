@@ -127,11 +127,26 @@ $$Q(t')=P(Y=t'|X=t)=\frac{P(Y=t' , X=t)}{P(X=t)} = \frac{f_{XY}}{f_{X}(t)}$$
 ---
 
 ## Factoring
-This is just a formula , mug it up 💀.
+Factoring is used to convert Joint Probabilities into a product of 
+Condtional and Marginal Probabilities.
+
+$$\begin{equation*}
+\begin{split}
+P(Y=t'|X=t)&=\frac{P(Y=t' , X=t)}{P(X=t)} \\
+\text{Conditional} &= \frac{\text{Joint}}{\text{Marginal}} \\
+\\
+\\
+P(Y=t' , X=t) &= P(Y=t'|X=t) \times P(X=t)\\
+\text{Joint} &= \text{Conditional} \times \text{Marginal}
+\end{split}
+\end{equation*}$$
+
+For a Joint Probability of 4 variables , 
 
 $$\begin{align*}
 f_{X_1X_2X_3X_4}(t_1,t_2,t_3,t_4) = P(X_4 = t_4 , X_3 = t_3 , X_2 = t_2 , X_1 = t_1)
 \\
 \implies f_{X_4 \mid X_3 = t_3 , X_2 = t_2 , X_1=t_1}(t_4) \times f_{X_3 \mid X_2 = t_2 , X_1=t_1}(t_3) \times f_{X_2 \mid X_1=t_1}(t_2) \times f_{X_1}(t_1)
 \end{align*}$$
+
 

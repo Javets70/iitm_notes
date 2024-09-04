@@ -137,6 +137,10 @@ nav:
         - Analysis of Firm Performance : "BDM/WEEK 3/Analysis of Firm Performance.md"
       - Week 4:
         - Industry Definition : "BDM/WEEK 4/Industry Definition.md"
+
+    - System Commands:
+        - Week 2:
+            - Shell Variables : "SC/WEEK 2/Shell Variables.md"
         
 # REPO CONFIG
 repo_url : "https://github.com/Javets70/iitm_notes"
@@ -172,3 +176,4 @@ extra_css:
   - stylesheets/extra.css
 
 
+"stupid shit"
